@@ -95,3 +95,37 @@
 .menu-ativo {
     width: 300px;
 }
+
+.rodape {
+    display: flex;
+    padding: 30px;
+    padding-left: 100px;
+    gap: 100px;
+
+    background-color: #EFB135;
+
+}
+
+.rodape img {
+    width: 250px;
+}
+
+.rodape-navegacao {
+    display: flex;
+    gap: 200px;
+}
+
+.rodape-navegacao div {
+    display: flex;
+    flex-direction: column;
+}
+
+.rodape-navegacao div p {
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.rodape-navegacao div a {
+    text-decoration: none;
+    color: #361E05;
+}

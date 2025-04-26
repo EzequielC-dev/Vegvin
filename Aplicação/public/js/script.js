@@ -17,7 +17,7 @@ function expanded() {
         forum.innerHTML += "<p>Fórum</p>"
         }
         else {
-        home.innerHTML = `<a href="" id="barra-ativo"><img src="./assets/icons/icon-home.svg" alt="Home"></a> `; 
+        home.innerHTML = `<a href=""><img src="./assets/icons/icon-home.svg" alt="Home"></a> `; 
         historia.innerHTML = `<a href=""><img src="./assets/icons/icon-historia.svg" alt="História"></a>`;
         personagens.innerHTML = `<a href=""><img src="./assets/icons/icon-personagens.svg" alt="Personagens"></a>`;
         forum.innerHTML = ` <a href=""><img src="./assets/icons/icon-forum.svg" alt="Fórum"></a>`;

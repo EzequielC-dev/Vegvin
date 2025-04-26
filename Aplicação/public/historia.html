@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Um site de fórum e wiki do anime Vinland Saga, venha conhecer!">
+    <title>VegVin</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho do site -->
+    <header class="cabecalho">
+        <img src="./assets/logo.png" alt="Logo Vegvin">
+        <nav class="cabecalho-navegacao">
+            <button id="cadastrar"><a href="">Cadastrar</a></button>
+            <button id="login"><a href="">Login</a></button>
+        </nav>
+    </header>
+
+    <!-- Parte principal-->
+    <main style="padding-left: 100px; font-size: 40px;" class="principal">
+        <article class="principal-barra">
+            <span href="" onclick="expanded()" class="principal-menu"><img src="./assets/icons/icon-menu.svg"
+                    alt="Menu"></span>
+
+            <div id="principal-barra-home">
+                <a href="index.html"><img src="./assets/icons/icon-home.svg" alt="Home"></a>
+            </div>
+            <div id="principal-barra-historia">
+                <a href="historia.html" id="barra-ativo"><img src="./assets/icons/icon-historia.svg" alt="História"></a>
+            </div>
+            <div id="principal-barra-personagens">
+                <a href=""><img src="./assets/icons/icon-personagens.svg" alt="Personagens"></a>
+            </div>
+            <div id="principal-barra-forum">
+                <a href=""><img src="./assets/icons/icon-forum.svg" alt="Fórum"></a>
+            </div>
+        </article>
+
+        <section>
+            <h1>Primeira Parte</h1>
+        </section>
+    </main>
+    <!-- Rodapé do site -->
+    <footer class="rodape">
+        <div class="rodape-logo">
+            <img src="./assets/logo.png" alt="Logo Vegvin">
+            <p>2025 - Todos os direitos reservados</p>
+        </div>
+
+        <div class="rodape-navegacao">
+            <div>
+                <p>VEGVIN</p>
+                <a href="">Home</a>
+                <a href="">Fórum</a>
+            </div>
+
+            <div>
+                <p>VINLAND SAGA</p>
+                <a href="">Personagens</a>
+                <a href="">História</a>
+            </div>
+
+            <div>
+                <p>REDES SOCIAIS</p>
+                <a href="">Instagram</a>
+                <a href="">Discord</a>
+                <a href="">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="./js/historia.js"></script>
+<script src="./js/script.js"></script>
+
+</html>
