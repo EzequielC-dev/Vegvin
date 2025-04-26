@@ -10,6 +10,7 @@ Vin: Vem da palavra Vinland, representando o anime em questão.
 
 
 ## Layout web
+![image](https://github.com/user-attachments/assets/efc046eb-d93e-4603-8c9c-770bd3ea336a)
 
 # Tecnologias utilizadas
 ## Front-End
