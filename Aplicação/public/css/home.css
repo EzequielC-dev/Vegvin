@@ -87,11 +87,16 @@
     padding-bottom: 30px;
 }
 
-.principal-previa-navegacao a {
+.principal-previa-navegacao button {
     text-decoration: none;
-    color: #361E05;
-    font-size: 12px;
     padding-bottom: 5px;
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    background-color: #FFF;
+    color: #361E05;
 }
 
 #ativo {
@@ -99,15 +104,24 @@
 }
 
 .principal-previa-imagem img {
-    padding-top: 70px;
     width: 450px;
+    height: 560px;
+    object-fit: cover;
 }
 
 .principal-previa-texto {
     width: 650px;
 }
 
+.principal-previa-texto h2 {
+    padding-bottom: 10px;
+}
+
 .principal-previa-texto p {
+    padding-bottom: 30px;
+}
+
+.principal-previa-texto p i {
     padding-bottom: 30px;
 }
 
