@@ -1,0 +1,111 @@
+.principal {
+    color: #FFF;
+    padding: 20px;
+    padding-left: 100px;
+}
+
+.principal-vegvin {
+    display: flex;
+    gap: 30px;
+}
+
+.principal-vinland-forum {
+    background-color: #EFB135;
+    border-radius: 8px;
+    width: 800px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.principal-vinland-forum img {
+    width: 800px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.principal-vinland-forum h1 {
+    padding-bottom: 10px;
+}
+
+.principal-sinopse {
+    background-color: #EFB135;
+    padding: 20px;
+    width: 800px;
+    border-radius: 8px;
+}
+
+.principal-sinopse-imagens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.principal-sinopse-imagens img {
+    width: 50px;
+}
+
+#principal-sinopse-logo {
+    width: 250px;
+    padding-left: 100px;
+    padding-right: 120px;
+    padding-bottom: 30px;
+}
+
+.principal-imagem img {
+    width: 370px;
+    height: 480px;
+    object-fit: contain;
+}
+
+.principal-imagem::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 160px;
+    right: 330px;
+    background-color: #EFB135;
+    width: 20px;
+    height: 400px;
+    border-radius: 40px;
+}
+
+.principal-previa {
+    color: #361E05;
+}
+
+.principal-previa {
+    display: flex;
+    padding-top: 50px;
+    gap: 110px;
+}
+
+.principal-previa-navegacao {
+    display: flex;
+    gap: 50px;
+    padding-bottom: 30px;
+}
+
+.principal-previa-navegacao a {
+    text-decoration: none;
+    color: #361E05;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+#ativo {
+    border-bottom: 4px solid #EFB135;
+}
+
+.principal-previa-imagem img {
+    padding-top: 70px;
+    width: 450px;
+}
+
+.principal-previa-texto {
+    width: 650px;
+}
+
+.principal-previa-texto p {
+    padding-bottom: 30px;
+}
