@@ -49,6 +49,12 @@
     border: 4px solid #EFB135;
 }
 
+.principal {
+    color: #FFF;
+    padding: 20px;
+    padding-left: 100px;
+}
+
 .principal-barra {
     display: flex;
     flex-direction: column;
@@ -81,6 +87,9 @@
     width: 30px;
     padding: 10px;
     cursor: pointer;
+    background-color: #EFB135;
+    display: flex;
+    justify-content: center;
 }
 
 .principal-barra p {
@@ -128,4 +137,18 @@
 .rodape-navegacao div a {
     text-decoration: none;
     color: #361E05;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+.girar img {
+    animation: rotate 0.5s linear forwards;
 }
