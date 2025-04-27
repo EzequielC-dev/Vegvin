@@ -1,0 +1,23 @@
+.principal {
+    font-size: 15px;
+    color: black;
+}
+
+.principal-primeira-parte,
+.principal-segunda-parte,
+.principal-terceira-parte,
+.principal-quarta-parte {
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.principal-retrospectiva {
+    display: flex;
+}
+
+.principal-slider-imagem img,
+.principal-retrospectiva img {
+    width: 450px;
+    height: 550px;
+    object-fit: cover;
+}
