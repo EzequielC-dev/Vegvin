@@ -1,23 +1,117 @@
 .principal {
     font-size: 15px;
-    color: black;
+    color: #361E05;
 }
 
-.principal-primeira-parte,
-.principal-segunda-parte,
-.principal-terceira-parte,
-.principal-quarta-parte {
+.principal-partes,
+.principal-retrospectiva {
     display: flex;
+    padding-top: 30px;
     padding-bottom: 40px;
+    gap: 120px;
 }
 
 .principal-retrospectiva {
     display: flex;
+    background-color: #EFB135;
 }
 
 .principal-slider-imagem img,
-.principal-retrospectiva img {
+.principal-retrospectiva-poster img {
     width: 450px;
     height: 550px;
     object-fit: cover;
 }
+
+.principal-partes button,
+.principal-retrospectiva button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    background-color: #EFB135;
+    box-shadow: 3px 3px 3px 2px #9695945d;
+
+    width: 150px;
+    height: 60px;
+    border-radius: 4px;
+}
+
+.principal-partes button img,
+.principal-retrospectiva button img {
+    width: 30px;
+}
+
+.principal-partes button a,
+.principal-retrospectiva button a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #361E05;
+}
+
+.principal-botoes {
+    display: flex;
+    gap: 5px;
+}
+
+.principal-botoes button img {
+    width: 25px;
+}
+
+.principal-partes div h2 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 40px;
+
+    text-transform: capitalize;
+}
+
+.principal-partes div h2::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 15px;
+    background-color: #EFB135;
+}
+
+.principal-partes div p {
+    width: 572px;
+    padding-bottom: 30px;
+}
+
+.principal-slider button {
+    position: relative;
+    right: 70px;
+
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.principal-slider button img {
+    width: 30px;
+    height: 30px;
+}
+
+.principal-slider-imagem {
+    display: flex;
+    align-items: center;
+}
+
+.principal-slider-imagem::before {
+    content: "";
+    position: relative;
+    left: 20px;
+    z-index: 2;
+
+    display: block;
+    width: 30px;
+    height: 350px;
+
+    background-color: #EFB135;
+    border-radius: 20px;
+}
+
+.principal-retrospectiva {}
