@@ -1,77 +1,50 @@
-let primeiroContador = 1;
-let segundoContador = 1;
-let terceiroContador = 1;
-let quartoContador = 1;
+const contadores = {
+    "primeira-imagem": 1,
+    "segunda-imagem": 1,
+    "terceira-imagem": 1,
+    "quarta-imagem": 1
+}
 
-function primeiraParte() {
+function mudarImagem(idImagem, caminhoBase) {
+    const background = document.getElementById(idImagem);
+    let contador = contadores[idImagem];
 
-    const background = document.getElementById("primeira-imagem");
+    console.log(background);
+    console.log(contador);
 
-    if(primeiroContador == 1) {
-        background.setAttribute('src', '/public/assets/historia/primeira-parte-vinland.png');
+    if(contador == 1) {
+        background.setAttribute('src', `${caminhoBase}.png`);
     }
-    else if(primeiroContador == 2) {
-        background.setAttribute('src', '/public/assets/historia/primeira-parte-vinland(2).png');
+    else if(contador == 2) {
+        background.setAttribute('src', `${caminhoBase}(2).png`);
+    }
+    else if(contador == 3) {
+        background.setAttribute('src', `${caminhoBase}(3).png`);
+        contador = 0;
+    }
+
+    if(idImagem == "primeira-imagem" && contador == 2) {
         background.style.filter = `brightness(80%)`;
     }
-    else if(primeiroContador == 3) {
-        background.setAttribute('src', '/public/assets/historia/primeira-parte-vinland(3).png');
-
-        primeiroContador = 0;
+    else {
+        background.style.filter = ``;
     }
-    primeiroContador++;
+
+    contadores[idImagem] = contador + 1;
 }
 
-function segundaParte() {
-    const background = document.getElementById("segunda-imagem");
-
-    if(segundoContador == 1) {
-        background.setAttribute('src', '/public/assets/historia/segunda-parte-vinland.png');
-    }
-    else if(segundoContador == 2) {
-        background.setAttribute('src', '/public/assets/historia/segunda-parte-vinland(2).png');
-    }
-    else if(segundoContador == 3) {
-        background.setAttribute('src', '/public/assets/historia/segunda-parte-vinland(3).png');
-
-        segundoContador = 0;
-    }
-
-    segundoContador ++;
-}
-
-function terceiraParte() {
-    const background = document.getElementById("terceira-imagem");
-
-    if(terceiroContador == 1) {
-        background.setAttribute('src', './assets/historia/terceira-parte-vinland.png');
-    }
-    else if(terceiroContador == 2) {
-        background.setAttribute('src', '/public/assets/historia/terceira-parte-vinland(2).png');
-    }
-    else if(terceiroContador == 3) {
-        background.setAttribute('src', '/public/assets/historia/terceira-parte-vinland(3).png');
-
-        terceiroContador = 0;
-    }
-
-    terceiroContador++;
-}
-
-function quartaParte() {
-    const background = document.getElementById("quarta-imagem");
-
-    if(quartoContador == 1) {
-        background.setAttribute('src', '/public/assets/historia/quarta-parte-vinland.png');
-    }
-    else if(quartoContador == 2) {
-        background.setAttribute('src', './assets/historia/quarta-parte-vinland(2).png');
-    }
-    else if(quartoContador == 3) {
-        background.setAttribute('src', '/public/assets/historia/quarta-parte-vinland(3).png');
-
-        quartoContador = 0;
-    }
-
-    quartoContador++;
-}
+function primeiraParte() {
+    mudarImagem("primeira-imagem", "/public/assets/historia/primeira-parte-vinland");
+  }
+  
+  function segundaParte() {
+    mudarImagem("segunda-imagem", "/public/assets/historia/segunda-parte-vinland");
+  }
+  
+  function terceiraParte() {
+    mudarImagem("terceira-imagem", "/public/assets/historia/terceira-parte-vinland");
+  }
+  
+  function quartaParte() {
+    mudarImagem("quarta-imagem", "/public/assets/historia/quarta-parte-vinland");
+  }
