@@ -114,4 +114,30 @@
     border-radius: 20px;
 }
 
-.principal-retrospectiva {}
+.principal-retrospectiva img {
+    padding-left: 20%;
+}
+
+.principal-retrospectiva-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.principal-retrospectiva-titulo {
+    display: flex;
+    gap: 20px;
+
+    background-color: #100F0B;
+    color: #EFB135;
+
+    padding: 25px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.principal-retrospectiva-texto p {
+    font-size: 18px;
+    padding-top: 40px;
+    width: 80%;
+}
