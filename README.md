@@ -6,6 +6,7 @@ VegVin é uma wiki do anime Vinland Saga, feito para o projeto individual de Pes
 A aplicação consiste em um site com diversas funcionalidades, desde um fórum para a discussão quanto telas com os personagens e a história do anime.
 
 Veg: vem da palavra nórdica "vegvísir" que era um símbolo de orientação, como uma bússola.
+
 Vin: Vem da palavra Vinland, representando o anime em questão.
 
 
