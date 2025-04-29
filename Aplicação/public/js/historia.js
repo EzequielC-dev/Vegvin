@@ -34,17 +34,17 @@ function mudarImagem(idImagem, caminhoBase) {
 }
 
 function primeiraParte() {
-    mudarImagem("primeira-imagem", "/public/assets/historia/primeira-parte-vinland");
+    mudarImagem("primeira-imagem", "./assets/historia/primeira-parte-vinland");
   }
   
   function segundaParte() {
-    mudarImagem("segunda-imagem", "/public/assets/historia/segunda-parte-vinland");
+    mudarImagem("segunda-imagem", "./assets/historia/segunda-parte-vinland");
   }
   
   function terceiraParte() {
-    mudarImagem("terceira-imagem", "/public/assets/historia/terceira-parte-vinland");
+    mudarImagem("terceira-imagem", "./assets/historia/terceira-parte-vinland");
   }
   
   function quartaParte() {
-    mudarImagem("quarta-imagem", "/public/assets/historia/quarta-parte-vinland");
+    mudarImagem("quarta-imagem", "./assets/historia/quarta-parte-vinland");
   }
