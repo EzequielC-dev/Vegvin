@@ -137,3 +137,7 @@
     text-decoration: none;
     color: #361E05;
 }
+
+#ativo {
+    border-bottom: 4px solid #EFB135;
+}

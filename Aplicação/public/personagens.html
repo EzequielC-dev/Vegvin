@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegvin - Personagens</title>
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/personagens.css">
+</head>
+
+<body>
+    <!-- Cabeçalho do site -->
+    <header class="cabecalho">
+        <img src="./assets/logo.png" alt="Logo Vegvin">
+        <nav class="cabecalho-navegacao">
+            <button id="cadastrar"><a href="cadastro.html">Cadastrar</a></button>
+            <button id="login"><a href="login.html">Login</a></button>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <article class="principal-barra">
+            <span href="" onclick="expanded()" class="principal-menu"><img src="./assets/icons/icon-menu.svg"
+                    alt="Menu"></span>
+
+            <div id="principal-barra-home">
+                <a href="index.html"><img src=" ./assets/icons/icon-home.svg" alt="Home"></a>
+            </div>
+            <div id="principal-barra-historia">
+                <a href="historia.html"><img src="./assets/icons/icon-historia.svg" alt="História"></a>
+            </div>
+            <div id="principal-barra-personagens">
+                <a href="personagens.html" id="barra-ativo"><img src=" ./assets/icons/icon-personagens.svg"
+                        alt="Personagens"></a>
+            </div>
+            <div id="principal-barra-forum">
+                <a href=""><img src="./assets/icons/icon-forum.svg" alt="Fórum"></a>
+            </div>
+        </article>
+
+        <section class="principal-previa" id="principal_previa">
+            <div>
+                <div class="principal-personagens-navegacao">
+                    <button onclick="thorfinn()" id="ativo">
+                        thorfinn
+                    </button>
+                    <button onclick="thors()">
+                        thors
+                    </button>
+                    <button onclick="askeladd()">
+                        askeladd
+                    </button>
+                    <button onclick="canute()">
+                        canute
+                    </button>
+                </div>
+
+                <div class="principal-personagens">
+                    <div class="principal-personagens-texto">
+                        <h2>Thorfinn</h2>
+
+                        <p>Esse arco é o mais intenso em termos de ação. A história mergulha na juventude do
+                            protagonista, quando ele é engolido por um objetivo cego: vingança. Ele vive entre
+                            guerreiros, líderes
+                            carismáticos e batalhas que testam sua força física e mental. Mas por trás das lutas existe
+                            um menino que foi arrancado do seu mundo e forçado a crescer num ambiente onde a violência é
+                            glorificada.
+                            Essa parte é sobre como o ódio pode dar propósito — mas também pode te esvaziar por dentro.
+                            As cenas de guerra são fortes, mas o verdadeiro conflito está dentro do personagem
+                            principal,
+                            que pouco a pouco começa a perceber que talvez esteja perdendo a si mesmo
+                            Palavras-chave: ódio, orgulho, perda, brutalidade
+                        </p>
+                    </div>
+
+                    <div class="principal-personagens-imagem">
+                        <img src="./assets/personagens/personagem-thorfinn.png" alt="Thorfinn">
+                    </div>
+                </div>
+            </div>
+
+            <section class="principal-previa" id="principal_previa">
+                <div>
+                    <div class="principal-personagens-navegacao">
+                        <button onclick="einar()" id="ativo">
+                            einar
+                        </button>
+                        <button onclick="arnheid()">
+                            arnheid
+                        </button>
+                        <button onclick="leif()">
+                            leif
+                        </button>
+                        <button onclick="thorkell()">
+                            thorkell
+                        </button>
+                    </div>
+
+                    <div class="principal-personagens">
+                        <div class="principal-personagens-texto">
+                            <h2>Einar</h2>
+
+                            <p>Esse arco é o mais intenso em termos de ação. A história mergulha na juventude do
+                                protagonista, quando ele é engolido por um objetivo cego: vingança. Ele vive entre
+                                guerreiros, líderes
+                                carismáticos e batalhas que testam sua força física e mental. Mas por trás das lutas
+                                existe
+                                um menino que foi arrancado do seu mundo e forçado a crescer num ambiente onde a
+                                violência é
+                                glorificada.
+                                Essa parte é sobre como o ódio pode dar propósito — mas também pode te esvaziar por
+                                dentro.
+                                As cenas de guerra são fortes, mas o verdadeiro conflito está dentro do personagem
+                                principal,
+                                que pouco a pouco começa a perceber que talvez esteja perdendo a si mesmo
+                                Palavras-chave: ódio, orgulho, perda, brutalidade
+                            </p>
+                        </div>
+
+                        <div class="principal-personagens-imagem">
+                            <img src="./assets/personagens/personagem-einar.png" alt="Einar">
+                        </div>
+                    </div>
+                </div>
+    </main>
+
+    <!-- Rodapé do site -->
+    <footer class="rodape">
+        <div class="rodape-logo">
+            <img src="./assets/logo.png" alt="Logo Vegvin">
+            <p>2025 - Todos os direitos reservados</p>
+        </div>
+
+        <div class="rodape-navegacao">
+            <div>
+                <p>VEGVIN</p>
+                <a href="">Home</a>
+                <a href="">Fórum</a>
+            </div>
+
+            <div>
+                <p>VINLAND SAGA</p>
+                <a href="">Personagens</a>
+                <a href="">História</a>
+            </div>
+
+            <div>
+                <p>REDES SOCIAIS</p>
+                <a href="">Instagram</a>
+                <a href="">Discord</a>
+                <a href="">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/global.js"></script>
+    <script src="./js/personagens.js"></script>
+</body>
+
+</html>

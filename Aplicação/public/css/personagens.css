@@ -1,0 +1,35 @@
+* {
+    color: #361E05;
+}
+
+.principal-personagens-navegacao {
+    display: flex;
+    gap: 5rem;
+
+}
+
+.principal-personagens-navegacao button {
+    text-transform: uppercase;
+    padding-top: 1rem;
+    padding-bottom: 0.4rem;
+
+    background-color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+
+    font-size: 0.9rem;
+
+}
+
+.principal-personagens {
+    display: flex;
+    gap: 3rem;
+}
+
+.principal-personagens-texto {
+    padding-top: 2.4rem;
+}
+
+.principal-personagens-imagem img {
+    width: 40rem;
+}
