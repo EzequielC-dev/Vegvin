@@ -10,7 +10,13 @@ function expanded() {
 
     barra.addEventListener("click", () => {
         barra.classList.toggle("menu-ativo");
-        menu.classList.toggle("girar")
+        if (menu.classList.contains("girar")) {
+            menu.classList.remove("girar");
+            menu.classList.add("voltar");
+        } else {
+            menu.classList.remove("voltar");
+            menu.classList.add("girar");
+        }
         
         if(barra.classList.contains("menu-ativo")) {
                     

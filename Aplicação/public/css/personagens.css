@@ -21,12 +21,14 @@
 
 }
 
-.principal-personagens {
+.principal-personagens-1,
+.principal-personagens-2 {
     display: flex;
     gap: 3rem;
 }
 
-.principal-personagens-texto {
+.principal-personagens-texto-1,
+.principal-personagens-texto-2 {
     padding-top: 2.4rem;
 }
 

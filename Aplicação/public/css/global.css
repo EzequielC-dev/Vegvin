@@ -140,7 +140,7 @@
     color: #361E05;
 }
 
-@keyframes rotate {
+@keyframes girar {
     from {
         transform: rotate(0deg);
     }
@@ -151,5 +151,24 @@
 }
 
 .girar img {
-    animation: rotate 0.5s linear forwards;
+    animation: girar 0.5s linear forwards;
+}
+
+@keyframes girar-de-volta {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.voltar img {
+    animation: girar-de-volta 0.5s linear forwards;
+}
+
+
+#ativo {
+    border-bottom: #EFB135 4px solid;
 }
