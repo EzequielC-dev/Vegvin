@@ -1,15 +1,18 @@
 function expanded() {
-    const menu = document.querySelector('.principal-barra');
+    const barra = document.querySelector('.principal-barra');
 
+    const menu = document.querySelector('#principal-barra-menu');
     const home = document.querySelector('#principal-barra-home');
     const historia = document.querySelector('#principal-barra-historia');
     const personagens = document.querySelector('#principal-barra-personagens');
     const forum = document.querySelector('#principal-barra-forum');
 
 
-    menu.addEventListener("click", () => {
-        menu.classList.toggle("menu-ativo");
-        if(menu.classList.contains("menu-ativo")) {
+    barra.addEventListener("click", () => {
+        barra.classList.toggle("menu-ativo");
+        menu.classList.toggle("girar")
+        
+        if(barra.classList.contains("menu-ativo")) {
                     
         home.innerHTML += "<p>Home</p>"
         historia.innerHTML += "<p>História</p>"

@@ -87,7 +87,13 @@
     width: 30px;
     padding: 10px;
     cursor: pointer;
+<<<<<<< HEAD:Aplicação/public/css/global.css
     color: #000000;
+=======
+    background-color: #EFB135;
+    display: flex;
+    justify-content: center;
+>>>>>>> validacao:Aplicação/public/css/style.css
 }
 
 .principal-barra p {
@@ -138,6 +144,21 @@
     color: #361E05;
 }
 
+<<<<<<< HEAD:Aplicação/public/css/global.css
 #ativo {
     border-bottom: 4px solid #EFB135;
+=======
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+.girar img {
+    animation: rotate 0.5s linear forwards;
+>>>>>>> validacao:Aplicação/public/css/style.css
 }
