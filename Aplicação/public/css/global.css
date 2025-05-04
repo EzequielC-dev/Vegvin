@@ -111,6 +111,7 @@
     border-radius: 8px;
 }
 
+/* Refatorar para fazer um display block none para evitar problemas de setar no innerHTML */
 .menu-ativo {
     width: 300px;
 }
