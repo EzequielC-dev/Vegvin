@@ -1,18 +1,20 @@
 .principal-vegvin {
     display: flex;
     gap: 1.875rem;
+
+    width: 100%;
 }
 
 .principal-vinland-forum {
     background-color: var(--amarelo);
     border-radius: 8px;
-    width: 50rem;
+    width: 59vw;
     padding: 1.25rem;
     margin-bottom: 1.875rem;
 }
 
 .principal-vinland-forum img {
-    width: 50rem;
+    width: 100%;
     height: 10rem;
     object-fit: cover;
     border-radius: 8px;
@@ -25,7 +27,7 @@
 .principal-sinopse {
     background-color: var(--amarelo);
     padding: 1.25rem;
-    width: 50rem;
+    width: 59vw;
     border-radius: 8px;
 }
 
@@ -46,23 +48,27 @@
     padding-bottom: 1.875rem;
 }
 
+.principal-imagem {
+    display: flex;
+    width: 40vw;
+
+    justify-content: center;
+    align-items: center;
+}
+
 .principal-imagem img {
-    width: 23.2rem;
     height: 30rem;
     object-fit: contain;
 }
 
-/* .principal-imagem::before {
+.principal-imagem::before {
     content: "";
     display: block;
-    position: absolute;
-    top: 160px;
-    right: 330px;
-    background-color: --var(--amarelo);
-    width: 20px;
-    height: 400px;
+    background-color: var(--amarelo);
+    width: 1.3rem;
+    height: 25rem;
     border-radius: 40px;
-} */
+}
 
 .principal-previa {
     color: var(--marrom);
@@ -79,6 +85,8 @@
     display: flex;
     gap: 50px;
     padding-bottom: 30px;
+
+    width: 50vw;
 }
 
 .principal-previa-navegacao button {
@@ -94,13 +102,13 @@
 }
 
 .principal-previa-imagem img {
-    width: 450px;
-    height: 560px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
 .principal-previa-texto {
-    width: 650px;
+    width: 50vw
 }
 
 .principal-previa-texto h2 {
@@ -137,8 +145,7 @@
     color: var(--marrom);
     font-weight: bold;
 
-    width: 671px;
-    height: 736px;
+    width: 100%;
 }
 
 .fale-conosco-inputs h1 {

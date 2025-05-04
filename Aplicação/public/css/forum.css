@@ -1,0 +1,90 @@
+.principal-navegacao-forum {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-bottom: 3rem;
+}
+
+.principal-navegacao-forum button {
+    text-transform: uppercase;
+    padding-top: 1rem;
+    padding-bottom: 0.4rem;
+
+    background-color: var(--branco);
+    font-weight: bold;
+    cursor: pointer;
+
+    font-size: 0.9rem;
+}
+
+.principal-forum {
+    display: flex;
+    gap: 5rem;
+    color: var(--marrom);
+}
+
+.principal-forum-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.comentario {
+    background-color: var(--amarelo);
+
+    padding: 1rem;
+    border-radius: 8px;
+
+    width: 50vw;
+}
+
+.comentario-perfil img {
+    width: 4rem;
+    border-radius: 50%;
+}
+
+.forum-top-usuarios img {
+    width: 4rem;
+    border-radius: 50%;
+}
+
+.comentario-likes-respostas {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+
+    font-weight: bold;
+}
+
+.comentario-likes-respostas img {
+    width: 70%;
+}
+
+.comentario-likes-respostas button {
+    background-color: var(--amarelo);
+}
+
+.principal-forum-top-usuarios {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.forum-logo,
+.forum-top {
+    background-color: var(--amarelo);
+
+    width: 30vw;
+    padding: 1rem;
+
+    border-radius: 8px;
+}
+
+.forum-top-usuarios span {
+    padding: 0.8rem 0rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
