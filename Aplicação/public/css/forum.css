@@ -19,23 +19,23 @@
 
 .principal-forum {
     display: flex;
-    gap: 5rem;
+    gap: 2rem;
     color: var(--marrom);
 }
 
 .principal-forum-comentarios {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .comentario {
-    background-color: var(--amarelo);
+    background-color: var(--amarelo-bg-comentario);
 
     padding: 1rem;
     border-radius: 8px;
 
-    width: 50vw;
+    width: 53vw;
 }
 
 .comentario-perfil {
@@ -70,7 +70,7 @@
 }
 
 .comentario-likes-respostas button {
-    background-color: var(--amarelo);
+    background-color: var(--amarelo-bg-comentario);
 }
 
 .principal-forum-top-usuarios {
