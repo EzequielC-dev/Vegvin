@@ -1,5 +1,5 @@
 * {
-    color: #361E05;
+    color: var(--marrom);
 }
 
 .principal-personagens-navegacao {
@@ -13,7 +13,7 @@
     padding-top: 1rem;
     padding-bottom: 0.4rem;
 
-    background-color: #FFF;
+    background-color: var(--branco);
     font-weight: bold;
     cursor: pointer;
 

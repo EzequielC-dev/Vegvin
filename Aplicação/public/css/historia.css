@@ -1,6 +1,6 @@
 .principal {
     font-size: 15px;
-    color: #361E05;
+    color: var(--marrom);
 }
 
 .principal-partes,
@@ -13,7 +13,7 @@
 
 .principal-retrospectiva {
     display: flex;
-    background-color: #EFB135;
+    background-color: var(--amarelo);
 }
 
 .principal-slider-imagem img,
@@ -30,8 +30,8 @@
     justify-content: center;
     gap: 20px;
 
-    background-color: #EFB135;
-    box-shadow: 3px 3px 3px 2px #9695945d;
+    background-color: var(--amarelo);
+    box-shadow: 3px 3px 3px 2px var(--cinza);
 
     width: 150px;
     height: 60px;
@@ -47,7 +47,7 @@
 .principal-retrospectiva button a {
     text-decoration: none;
     font-weight: bold;
-    color: #361E05;
+    color: var(--marrom);
 }
 
 .principal-botoes {
@@ -73,7 +73,7 @@
     display: block;
     width: 160px;
     height: 15px;
-    background-color: #EFB135;
+    background-color: var(--amarelo);
 }
 
 .principal-partes div p {
@@ -110,7 +110,7 @@
     width: 30px;
     height: 350px;
 
-    background-color: #EFB135;
+    background-color: var(--amarelo);
     border-radius: 20px;
 }
 
@@ -128,8 +128,8 @@
     display: flex;
     gap: 20px;
 
-    background-color: #100F0B;
-    color: #EFB135;
+    background-color: var(--preto);
+    color: var(--amarelo);
 
     padding: 25px;
     font-size: 20px;

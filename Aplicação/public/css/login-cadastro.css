@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sarala:wght@400;700&display=swap');
 
+:root {
+    --amarelo: #EFB135;
+    --amarelo-bg-ativo: #FAD998;
+    --branco: #FFF;
+    --marrom: #361E05;
+    --preto: #000;
+    --cinza: #9695945d;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +20,7 @@
 .principal-cadastro {
     width: 70%;
     height: 100vh;
-    color: #361E05;
+    color: var(--marrom);
 
     display: flex;
     flex-direction: column;
@@ -36,7 +45,7 @@
     text-align: start;
     font-weight: bold;
 
-    background-color: #EFB135;
+    background-color: var(--amarelo);
     padding: 2.5rem;
     border-radius: 4px;
 
@@ -67,9 +76,9 @@
 
 .principal-login button,
 .principal-cadastro button {
-    background-color: #100F0B;
+    background-color: var(--preto);
     border-radius: 4px;
-    color: #EFB135;
+    color: var(--amarelo);
 
     margin-top: 1rem;
     padding: 0.6rem;
@@ -90,7 +99,7 @@
     justify-content: flex-start;
     gap: 10px;
 
-    background-color: #EFB135;
+    background-color: var(--amarelo);
     width: 80px;
     height: 100vh;
     padding-top: 20px;
@@ -116,7 +125,7 @@
     width: 30px;
     padding: 10px;
     cursor: pointer;
-    color: #000000;
+    color: var(--preto);
 }
 
 .principal-barra p {
@@ -125,7 +134,7 @@
 }
 
 #barra-ativo {
-    background-color: #FAD998;
+    background-color: var(--amarelo-bg-ativo);
     border-radius: 8px;
 }
 
