@@ -38,6 +38,14 @@
     width: 50vw;
 }
 
+.comentario-perfil {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    padding-bottom: 0.5rem;
+}
+
 .comentario-perfil img {
     width: 4rem;
     border-radius: 50%;
@@ -79,6 +87,49 @@
     padding: 1rem;
 
     border-radius: 8px;
+}
+
+.forum-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    color: var(--marrom);
+    text-align: center;
+}
+
+.forum-logo img {
+    width: 20rem;
+    height: 10rem;
+    object-fit: cover;
+
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.forum-logo button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--preto);
+    color: var(--amarelo);
+    padding: 1rem;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.forum-logo button img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.forum-logo-botao {
+    display: flex;
+    gap: 1rem;
+
+    padding-left: 10%;
 }
 
 .forum-top-usuarios span {

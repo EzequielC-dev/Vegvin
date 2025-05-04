@@ -9,6 +9,8 @@
     padding-top: 30px;
     padding-bottom: 40px;
     gap: 120px;
+
+    width: 100%;
 }
 
 .principal-retrospectiva {
@@ -18,8 +20,8 @@
 
 .principal-slider-imagem img,
 .principal-retrospectiva-poster img {
-    width: 450px;
-    height: 550px;
+    width: 28.1;
+    height: 34.1rem;
     object-fit: cover;
 }
 
@@ -28,7 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 1rem;
 
     background-color: var(--amarelo);
     box-shadow: 3px 3px 3px 2px var(--cinza);
@@ -36,6 +38,7 @@
     width: 150px;
     height: 60px;
     border-radius: 4px;
+
 }
 
 .principal-partes button img,
