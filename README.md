@@ -20,10 +20,12 @@ Vin: Vem da palavra Vinland, representando o anime em questão.
 - JavaScript
 
 ## Back-End
-- Node.js
+- Node.js 
+- Express
 
 ## Implantação em produção
 - Front-end web: 
+- Back-end:
 
 # Autor
 
