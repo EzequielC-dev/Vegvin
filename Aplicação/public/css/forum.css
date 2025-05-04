@@ -51,6 +51,10 @@
     border-radius: 50%;
 }
 
+.comentario-titulo-previa h3 {
+    padding-bottom: 0.5rem;
+}
+
 .forum-top-usuarios img {
     width: 4rem;
     border-radius: 50%;
