@@ -6,14 +6,14 @@
 .principal-vinland-forum {
     background-color: #EFB135;
     border-radius: 8px;
-    width: 800px;
-    padding: 20px;
-    margin-bottom: 30px;
+    width: 50rem;
+    padding: 1.25rem;
+    margin-bottom: 1.875rem;
 }
 
 .principal-vinland-forum img {
-    width: 800px;
-    height: 160px;
+    width: 50rem;
+    height: 10rem;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -24,8 +24,8 @@
 
 .principal-sinopse {
     background-color: #EFB135;
-    padding: 20px;
-    width: 800px;
+    padding: 1.25rem;
+    width: 50rem;
     border-radius: 8px;
 }
 
