@@ -1,5 +1,6 @@
 function expanded() {
     const barra = document.querySelector('.principal-barra');
+    const barraLegenda = document.querySelectorAll('.principal-barra-legenda');
 
     const menu = document.querySelector('#principal-barra-menu');
     const home = document.querySelector('#principal-barra-home');
@@ -17,20 +18,10 @@ function expanded() {
             menu.classList.remove("voltar");
             menu.classList.add("girar");
         }
-        
-        if(barra.classList.contains("menu-ativo")) {
-                    
-        home.innerHTML += "<p>Home</p>"
-        historia.innerHTML += "<p>História</p>"
-        personagens.innerHTML += "<p>Personagens</p>"
-        forum.innerHTML += "<p>Fórum</p>"
-        }
-        else {
-        home.innerHTML = `<a href=""><img src="./assets/icons/icon-home.svg" alt="Home"></a> `; 
-        historia.innerHTML = `<a href=""><img src="./assets/icons/icon-historia.svg" alt="História"></a>`;
-        personagens.innerHTML = `<a href=""><img src="./assets/icons/icon-personagens.svg" alt="Personagens"></a>`;
-        forum.innerHTML = ` <a href=""><img src="./assets/icons/icon-forum.svg" alt="Fórum"></a>`;
-        }
+
+        barraLegenda.forEach((index) => {
+            index.classList.toggle("legenda-ativa");
+        })
 
     })
 }

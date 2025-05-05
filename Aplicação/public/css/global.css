@@ -102,6 +102,12 @@
     justify-content: center;
 }
 
+.principal-barra a:hover {
+    background-color: var(--amarelo-bg-ativo);
+    transition-duration: 0.3s;
+    border-radius: 8px;
+}
+
 .principal-barra p {
     font-weight: bold;
     font-size: 18px;
@@ -113,6 +119,15 @@
 }
 
 /* Refatorar para fazer um display block none para evitar problemas de setar no innerHTML */
+
+.principal-barra-legenda {
+    display: none;
+}
+
+.legenda-ativa {
+    display: block;
+}
+
 .menu-ativo {
     width: 300px;
 }
