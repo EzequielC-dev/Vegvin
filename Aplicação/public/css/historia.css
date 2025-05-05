@@ -6,6 +6,7 @@
 .principal-partes,
 .principal-retrospectiva {
     display: flex;
+    justify-content: center;
     padding-top: 30px;
     padding-bottom: 40px;
     gap: 120px;
@@ -20,7 +21,7 @@
 
 .principal-slider-imagem img,
 .principal-retrospectiva-poster img {
-    width: 28.1;
+    width: 28.1rem;
     height: 34.1rem;
     object-fit: cover;
 }
