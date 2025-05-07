@@ -3,11 +3,11 @@ USE vegvin;
 
 CREATE TABLE usuario (
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-    usarname VARCHAR(20),
+    username VARCHAR(20),
     email VARCHAR(45),
     senha VARCHAR(25),
     dtNasc DATE,
-    tipo VARCHAR(25)
+    tipo VARCHAR(25),
     CONSTRAINT chk_tipo CHECK (tipo IN ('administrador', 'membro'))
 );
 

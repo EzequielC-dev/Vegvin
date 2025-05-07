@@ -13,7 +13,7 @@ function cadastrarUsuario() {
                 username: username,
                 email: email,
                 senha: senha,
-                dtNasc: dtNasc
+                data_nascimento: dtNasc
             })
     }
 
