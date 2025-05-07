@@ -11,6 +11,14 @@ CREATE TABLE usuario (
     CONSTRAINT chk_tipo CHECK (tipo IN ('administrador', 'membro'))
 );
 
+SELECT * FROM usuario;
+TRUNCATE usuario;
+
+DROP TABLE usuario;
+
+ALTER TABLE usuario DROP CONSTRAINT chk_tipo;
+
+
 CREATE TABLE topico (
 	idTopico INT PRIMARY KEY,
 	categoria VARCHAR(30),

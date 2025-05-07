@@ -14,8 +14,22 @@ function loginUsuario() {
     }
 
     fetch("usuarios/login", header)
-    .then(() => {
-        console.log("Deu bom");
+    .then((resposta) => {
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+
+                    function usuarioLogado() {
+                        window.location = '../historia.html';
+                    }
+                    usuarioLogado();
+                });
+
+            }
     })
     .catch(() => {
         console.log("Deu ruim");

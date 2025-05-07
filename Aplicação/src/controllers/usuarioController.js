@@ -12,7 +12,7 @@ function login(req, res) {
 
         usuarioModel.login(email, senha)
         .then((resultado) => {
-            if(resultado.lenght > 0) {
+            if(resultado.length > 0) {
                 res.status(200).json(
                     {
                         email: resultado[0].email,
