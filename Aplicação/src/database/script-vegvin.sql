@@ -12,12 +12,6 @@ CREATE TABLE usuario (
 );
 
 SELECT * FROM usuario;
-TRUNCATE usuario;
-
-DROP TABLE usuario;
-
-ALTER TABLE usuario DROP CONSTRAINT chk_tipo;
-
 
 CREATE TABLE topico (
 	idTopico INT PRIMARY KEY,

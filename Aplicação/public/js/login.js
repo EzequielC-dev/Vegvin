@@ -31,7 +31,7 @@ function loginUsuario() {
 
             }
     })
-    .catch(() => {
-        console.log("Deu ruim");
+    .catch((erro) => {
+        console.log("Erro:", erro);
     })
 }
