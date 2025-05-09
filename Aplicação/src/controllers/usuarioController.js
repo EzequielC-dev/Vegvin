@@ -21,7 +21,7 @@ function login(req, res) {
                 )
             }
             else {
-                res.status(403).send("Usuário ou senha invalidos");
+                res.status(403).send("Usuário ou senha inválidos");
             }
         })
         .catch((erro) => {
