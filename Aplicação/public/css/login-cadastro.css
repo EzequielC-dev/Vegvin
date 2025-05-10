@@ -87,6 +87,7 @@
     font-size: 1rem;
     font-weight: bold;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 #input-data {

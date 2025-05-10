@@ -1,3 +1,6 @@
+const buttonRegister = document.getElementById('cadastrar');
+buttonRegister.addEventListener('click', cadastrarUsuario);
+
 function cadastrarUsuario() {
     const username = document.getElementById('username').value;
     const email = document.getElementById('email').value;
@@ -41,11 +44,40 @@ function cadastrarUsuario() {
 
         fetch('/usuarios/cadastrar', header)
         .then(() => {
-            alert("Cadastro realizado com sucesso!");
-            window.location = "../login.html";
+            Toastify({
+                text: "Cadastro realizado com sucesso!",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right", 
+                stopOnFocus: true,
+                style: {
+                    background: '#EFB135',
+                    color: '#361E05',    
+                },
+            }).showToast();
+
+            setTimeout(() => {
+                window.location = "../login.html";
+            }, 2000);
         })
         .catch(() => {
-            console.log("Deu erro");
+            Toastify({
+                text: "Erro: requisição não realizada!",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                    background: '#EFB135',
+                    color: '#361E05',    
+                },
+            }).showToast();
         })
     }
 }

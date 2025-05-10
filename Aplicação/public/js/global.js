@@ -3,11 +3,6 @@ function expanded() {
     const barraLegenda = document.querySelectorAll('.principal-barra-legenda');
 
     const menu = document.querySelector('#principal-barra-menu');
-    const home = document.querySelector('#principal-barra-home');
-    const historia = document.querySelector('#principal-barra-historia');
-    const personagens = document.querySelector('#principal-barra-personagens');
-    const forum = document.querySelector('#principal-barra-forum');
-
 
     barra.addEventListener("click", () => {
         barra.classList.toggle("menu-ativo");

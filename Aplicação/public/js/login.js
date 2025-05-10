@@ -1,3 +1,6 @@
+const buttonLogin = document.getElementById('login');
+buttonLogin.addEventListener('click', loginUsuario)
+
 function loginUsuario() {
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
@@ -23,24 +26,50 @@ function loginUsuario() {
             })
         }
 
-        fetch("usuarios/login", header)
+        fetch("http://localhost:3333/usuarios/login", header)
         .then((resposta) => {
                 if(resposta.ok) {
-                    alert("Login Realizado com Sucesso!");
+                    Toastify({
+                        text: "Login realizado com sucesso!",
+                        duration: 3000,
+                        destination: "https://github.com/apvarun/toastify-js",
+                        newWindow: true,
+                        close: true,
+                        gravity: "top",
+                        position: "right", 
+                        stopOnFocus: true,
+                        style: {
+                            background: '#EFB135',
+                            color: '#361E05',    
+                        },
+                    }).showToast();
                     console.log(resposta);
 
                     resposta.json().then(json => {
-                        sessionStorage.EMAIL_USUARIO = json.email;
-                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.userEmail = json.email;
+                        sessionStorage.userName = json.username;
 
-                        function usuarioLogado() {
-                            window.location = '../historia.html';
-                        }
-                        usuarioLogado();
+                        setTimeout(() => {
+                            window.location.href = '../cadastrado-home.html';     
+                        }, 2000);
                     });
                 }
     })
     .catch((erro) => {
+        Toastify({
+            text: "Erro na sua requisição!",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right", 
+            stopOnFocus: true,
+            style: {
+                background: '#EFB135',
+                color: '#361E05',    
+            },
+        }).showToast();
         console.log("Erro:", erro);
     })
     }
