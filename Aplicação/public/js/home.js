@@ -4,7 +4,7 @@ const containerName = document.getElementById('container-name');
 const todayDate = document.getElementById('today-date');
 const dateComplete = {
     day: new Date().getDate(),
-    month: new Date().getMonth(),
+    month: new Date().getMonth() + 1,
     year: new Date().getFullYear()
 }
 
@@ -202,4 +202,4 @@ if(sessionStorage.userEmail != undefined && sessionStorage.userName != undefined
     containerName.innerHTML = username;
 }
 
-todayDate.innerHTML = `${dateComplete.day}/${dateComplete.month + 1}/${dateComplete.year}`;
+todayDate.innerHTML = `${dateComplete.day}/${dateComplete.month}/${dateComplete.year}`;

@@ -32,13 +32,3 @@ if(sessionStorage.userEmail != undefined && sessionStorage.userName != undefined
         element.style.display = 'flex';
     });
 }
-
-
-// leave.addEventListener('click', leaveButton)
-
-// function leaveButton() {
-//     sessionStorage.userEmail = undefined;
-//     sessionStorage.userName = undefined;
-
-//     window.location = index.html;
-// }
