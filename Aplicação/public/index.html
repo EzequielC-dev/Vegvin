@@ -15,8 +15,15 @@
     <header class="cabecalho">
         <img src="./assets/logo.png" alt="Logo Vegvin">
         <nav class="cabecalho-navegacao">
-            <button id="cadastrar"><a href="cadastro.html">Cadastrar</a></button>
-            <button id="login"><a href="login.html">Login</a></button>
+            <button class="normal-button no-auth"><a href="cadastro.html">Cadastrar</a></button>
+            <button id="login" class="no-auth"><a href="login.html">Login</a></button>
+
+            <button class="normal-button button-image auth">
+                <img src="./assets/icons/icon-forum.svg" alt="icon fórum">
+                <a href="forum.html">Fórum</a>
+            </button>
+            <button class="normal-button button-image auth"><img src="./assets/icons/icon-sair.svg" alt="icon sair">
+                <a href="index.html" id="leave">Sair</a></button>
         </nav>
     </header>
 
@@ -43,10 +50,15 @@
                 <a href="forum.html"><img src="./assets/icons/icon-forum.svg" alt="Fórum"></a>
                 <p class="principal-barra-legenda">Fórum</p>
             </div>
+
+            <div class="principal-barra-config auth">
+                <a href="configuracoes.html"><img src="./assets/icons/icon-config-brown.svg" alt="Configurações"></a>
+                <p class="principal-barra-legenda">Configurações</p>
+            </div>
         </article>
 
         <div>
-            <section class="principal-vegvin">
+            <section class="principal-vegvin no-auth">
                 <div class="principal-containers">
                     <div class="principal-vinland-forum">
                         <img src="./assets/home/thorfinn-einar.png" alt="Thorfinn e Einar">
@@ -62,6 +74,49 @@
                         </div>
                         <p>Após o assassinato do pai, o jovem Thorfinn entra para o bando de mercenários comandado pelo
                             assassino e tenta encontrar a chance perfeita de se vingar.</p>
+                    </div>
+                </div>
+                <div class="principal-imagem">
+                    <img src="./assets/home/garota-samurai-home.png" alt="Garota Samurai">
+                </div>
+            </section>
+
+            <section class="principal-vegvin auth">
+                <div class="principal-containers">
+                    <div class="principal-vinland-forum">
+                        <img src="./assets/home/banner-cadastrado.png" alt="Banner thorfinn">
+                        <div class="principal-vinland-content">
+                            <span class="principal-vinland-user">
+                                <div class="principal-vinland-image">
+                                    <img src="./assets/home/icon-thorfinn-cadastrado.jpeg].jpg"
+                                        alt="Icon Thorfinn Cadastrado">
+                                </div>
+                                <div>
+                                    <h1>Bem-vindo, <span id="container-name"></span></h1>
+                                    <p>Olá, hoje é dia <span id="today-date"></span>, mais uma data para agradecer pela
+                                        vida e pelo que foi dado hoje!</p>
+                                </div>
+                            </span>
+                            <span class="principal-vinland-buttons">
+                                <button><img src="./assets/icons/icon-dashboard.svg"
+                                        alt="icon Dashboard">Dashboard</button>
+                                <button>
+                                    <img src="./assets/icons/icon-config.svg" alt="icon Config">Configurações
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="principal-sinopse">
+                        <div class="principal-sinopse-imagens">
+                            <h1>Curiosidade: Thorfinn existiu de verdade!</h1>
+                            <img src="./assets/icons/icon-lamp.svg" alt="Icon Lamp">
+                        </div>
+                        <p>O protagonista de Vinland Saga, Thorfinn Karlsefni, é inspirado em uma figura histórica real
+                            — um explorador islandês do século XI. Segundo as Sagas Nórdicas, Thorfinn realmente partiu
+                            em uma expedição para uma terra chamada Vinland, que os estudiosos acreditam ser a costa da
+                            América do Norte (provavelmente o atual Canadá).Thorfinn ficou conhecido por ser um dos
+                            primeiros europeus a tentar colonizar o continente americano — quase 500 anos antes de
+                            Cristóvão Colombo!</p>
                     </div>
                 </div>
                 <div class="principal-imagem">

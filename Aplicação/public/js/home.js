@@ -1,4 +1,13 @@
 const principalPrevia = principal_previa;
+const containerName = document.getElementById('container-name');
+
+const todayDate = document.getElementById('today-date');
+const dateComplete = {
+    day: new Date().getDate(),
+    month: new Date().getMonth(),
+    year: new Date().getFullYear()
+}
+
 
 function historia() {
     principalPrevia.innerHTML = `<div>
@@ -187,3 +196,10 @@ function vegvin() {
             </div>
     `
 }
+
+if(sessionStorage.userEmail != undefined && sessionStorage.userName != undefined) {
+    const username = sessionStorage.getItem('userName');
+    containerName.innerHTML = username;
+}
+
+todayDate.innerHTML = `${dateComplete.day}/${dateComplete.month + 1}/${dateComplete.year}`;

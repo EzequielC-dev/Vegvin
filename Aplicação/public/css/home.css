@@ -35,6 +35,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    gap: 2rem;
+    padding-bottom: 1rem;
 }
 
 .principal-sinopse-imagens img {
@@ -201,4 +204,66 @@
     width: 40px;
 
     cursor: pointer;
+}
+
+.no-auth {
+    visibility: visible;
+}
+
+.auth {
+    display: none;
+    color: var(--marrom);
+}
+
+.principal-vinland-content {
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.principal-vinland-user {
+    background-color: var(--amarelo-bg-comentario);
+    padding: 1rem;
+
+    width: 75%;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.principal-vinland-image img {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+}
+
+.principal-vinland-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.principal-vinland-buttons button {
+    background-color: #000;
+    color: var(--amarelo);
+
+    padding: 1rem;
+    height: 100%;
+
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    cursor: pointer;
+}
+
+.principal-vinland-buttons button img {
+    width: 1.4rem;
+    height: 1.4rem;
+
+    border: 0;
+    padding: 0;
 }

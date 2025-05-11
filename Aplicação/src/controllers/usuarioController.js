@@ -15,6 +15,7 @@ function login(req, res) {
             if(resultado.length > 0) {
                 res.status(200).json(
                     {
+                        username: resultado[0].username,
                         email: resultado[0].email,
                         senha: resultado[0].senha
                     }

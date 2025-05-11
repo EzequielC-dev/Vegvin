@@ -1,5 +1,6 @@
 const buttonLogin = document.getElementById('login');
-buttonLogin.addEventListener('click', loginUsuario)
+
+buttonLogin.addEventListener('click', loginUsuario);
 
 function loginUsuario() {
     const email = document.getElementById("email").value;
@@ -42,16 +43,15 @@ function loginUsuario() {
                             background: '#EFB135',
                             color: '#361E05',    
                         },
-                    }).showToast();
-                    console.log(resposta);
-
+                    }).showToast();           
+                    
                     resposta.json().then(json => {
                         sessionStorage.userEmail = json.email;
                         sessionStorage.userName = json.username;
 
                         setTimeout(() => {
-                            window.location.href = '../cadastrado-home.html';     
-                        }, 2000);
+                            window.location.href = '../index.html';     
+                        }, 1000);
                     });
                 }
     })

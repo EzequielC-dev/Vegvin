@@ -37,7 +37,8 @@
 }
 
 .cabecalho-navegacao button {
-    width: 120px;
+    width: 10rem;
+    height: 3rem;
     padding: 10px;
     gap: 20px;
 
@@ -50,8 +51,21 @@
     font-weight: bold;
 }
 
-#cadastrar {
+.normal-button {
     background-color: var(--amarelo);
+}
+
+.button-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-image img {
+    width: 1.4rem;
+
+    margin: 0;
+    padding: 0;
 }
 
 #login {
@@ -118,10 +132,14 @@
     border-radius: 8px;
 }
 
-/* Refatorar para fazer um display block none para evitar problemas de setar no innerHTML */
+.principal-barra-config {
+    padding-top: 2rem;
+
+}
 
 .principal-barra-legenda {
     display: none;
+    color: var(--marrom);
 }
 
 .legenda-ativa {

@@ -1,7 +1,10 @@
+const noAuth = document.querySelectorAll('.no-auth');
+const auth = document.querySelectorAll('.auth');
+const leave = document.getElementById('leave');
+
 function expanded() {
     const barra = document.querySelector('.principal-barra');
     const barraLegenda = document.querySelectorAll('.principal-barra-legenda');
-
     const menu = document.querySelector('#principal-barra-menu');
 
     barra.addEventListener("click", () => {
@@ -21,3 +24,21 @@ function expanded() {
     })
 }
 
+if(sessionStorage.userEmail != undefined && sessionStorage.userName != undefined) {
+    noAuth.forEach(element => {
+        element.style.display = 'none';
+    });
+    auth.forEach((element) => {
+        element.style.display = 'flex';
+    });
+}
+
+
+// leave.addEventListener('click', leaveButton)
+
+// function leaveButton() {
+//     sessionStorage.userEmail = undefined;
+//     sessionStorage.userName = undefined;
+
+//     window.location = index.html;
+// }
