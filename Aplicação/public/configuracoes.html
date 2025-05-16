@@ -62,20 +62,51 @@
             </div>
         </article>
 
-        <section>
+        <section class="principal-user">
             <div>
-                <div>
+                <div class="principal-user-img">
                     <img src="./assets/home/icon-thorfinn-cadastrado.jpeg].jpg" alt="Icon Thorfinn">
-                    <h1><span>Username</span></h1>
-                    <p><span>Email</span></p>
+                    <h1><span id="a-name"></span></h1>
+                    <p><span id="a-email"></span></p>
                 </div>
-                <div>
 
+                <div class="principal-user-information">
+                    <h2>Informações</h2>
+                    <div>
+                        <p>Username: <span id="a-username"></span></p>
+                        <p>Email: <span id="a-email"></span></p>
+                        <p>Data de Nascimento: <span id="a-dtNasc"></span></p>
+                    </div>
                 </div>
             </div>
 
             <div>
+                <h2>Configurações de Usuário</h2>
 
+                <div>
+                    <p>Nome</p>
+                    <input type="text">
+
+                    <p>E-mail</p>
+                    <input type="text">
+
+                    <p>Data de Nascimento</p>
+                    <input type="date">
+
+                    <button>Salvar Alterações</button>
+                </div>
+
+                <div>
+                    <h3>Acessibilidade</h3>
+
+                    <div>
+                        <p>Modo Escuro:</p>
+                        <label class="switch-theme">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -110,6 +141,7 @@
     </footer>
 
     <script src="./js/global.js"></script>
+    <script src="./js/config.js"></script>
 </body>
 
 </html>
