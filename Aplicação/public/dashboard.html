@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -68,7 +69,7 @@
             <div class="principal-config-information">
                 <div class="principal-config-img">
                     <img src="./assets/home/icon-thorfinn-cadastrado.jpeg].jpg" alt="Icon Thorfinn">
-                    <h1>Usuário <span id="a-user"></span></h1>
+                    <h1>Usuário: <span id="a-user"></span></h1>
                 </div>
                 <div>
                     <h1>Total Posts:</h1>
@@ -96,20 +97,19 @@
 
         <section class="principal-container">
             <div class="principal-container-chart">
-                <h1>Categoria Mais Utilizada:</h1>
+                <h1>Categorias Mais Utilizadas:</h1>
+                <canvas id="container-chart-category"></canvas>
             </div>
 
             <div class="principal-container-chart">
                 <h1>Posts Semanais:</h1>
+                <canvas id="container-chart-post"></canvas>
             </div>
         </section>
 
-        <section>
+        <section class="principal-container-history-post">
             <div>
-
-            </div>
-            <div>
-                <h1>Agradeço por usar e confiar na VegVin, juntos seremos melhores</h1>
+                <h1>Histórico de Posts:</h1>
             </div>
         </section>
     </main>
@@ -144,6 +144,7 @@
     </footer>
 
     <script src="./js/global.js"></script>
+    <script src="./js/dashboard.js"></script>
 </body>
 
 </html>

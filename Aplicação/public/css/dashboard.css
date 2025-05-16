@@ -11,13 +11,7 @@
     text-align: center;
 
     padding: 1rem;
-    margin-bottom: 1rem;
     border-radius: 4px;
-}
-
-.principal-container {
-    display: flex;
-    gap: 2rem;
 }
 
 .principal-config-information {
@@ -47,11 +41,41 @@
     padding: 1rem;
 }
 
+.principal-container {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
 .principal-container-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     background-color:  var(--amarelo);
 
     padding: 1rem;
-    width: 50%;
+    width: 46%;
 
+    border-radius: 4px;
+}
+
+.principal-container-chart h1 {
+    background-color: var(--amarelo-bg-ativo);
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.principal-container-chart canvas {
+    background-color: var(--branco);
+    padding: 1rem;
+}
+
+.principal-container-history-post {
+    background-color: var(--amarelo);
+    
+    padding: 1rem;
     border-radius: 4px;
 }
