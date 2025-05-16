@@ -2,6 +2,11 @@
     color: var(--marrom);
 }
 
+.principal-user {
+    display: flex;
+    gap: 5rem;
+}
+
 .principal-user-img {
     display: flex;
     flex-direction: column;
@@ -9,14 +14,68 @@
     gap: 0.5rem;
 
     background-color: var(--amarelo);
-    width: 30%;
+
     padding: 2rem;
     border-radius: 4px;
+    width: 100%;
 }
 
 .principal-user-img img {
     width: 10rem;
     border-radius: 50%;
+}
+
+.principal-user-information {
+    background-color: var(--amarelo);
+    padding-top: 3rem;
+
+}
+
+.principal-user-config {
+    padding: 2rem;
+    background-color: var(--amarelo);
+    width: 100%;
+    height: 58vh;
+
+    border-radius: 4px;
+}
+
+.principal-user-config h2 {
+    padding-bottom: 2rem;
+}
+
+.principal-user-data {
+    display: flex;
+    gap: 2rem;
+    text-wrap: wrap;
+}
+
+.principal-user-data input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: var(--amarelo-bg-comentario);
+}
+
+.principal-user-data div span {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    width: 25vw;
+
+}
+
+.save-button {
+    background-color: var(--preto);
+    color: var(--amarelo);
+    border-radius: 4px;
+    padding: 1rem;
+    text-wrap: nowrap;
+
+    cursor: pointer;
+}
+
+.principal-user-acessibility {
+    padding-top: 2rem;
 }
 
 .switch-theme {
