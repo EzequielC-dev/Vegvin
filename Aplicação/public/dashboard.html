@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegvin - Configurações</title>
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img src="./assets/logo.png" alt="Logo Vegvin">
+        <nav class="cabecalho-navegacao">
+            <button class="normal-button no-auth"><a href="cadastro.html">Cadastrar</a></button>
+            <button id="login" class="no-auth"><a href="login.html">Login</a></button>
+
+            <button class="normal-button button-image auth">
+                <img src="./assets/icons/icon-forum.svg" alt="icon fórum">
+                <a href="forum.html">Fórum</a>
+            </button>
+            <button class="normal-button button-image auth"><img src="./assets/icons/icon-sair.svg" alt="icon sair">
+                <a href="index.html" id="leave">Sair</a></button>
+        </nav>
+    </header>
+
+    <!-- Parte principal -->
+    <main class="principal">
+        <article class="principal-barra">
+            <span href="" onclick="expanded()" id="principal-barra-menu">
+                <img src="./assets/icons/icon-menu.svg" alt="Menu">
+            </span>
+
+            <div id="principal-barra-home">
+                <a href="index.html"><img src="./assets/icons/icon-home.svg" alt="Home"></a>
+                <p class="principal-barra-legenda">Home</p>
+            </div>
+            <div id="principal-barra-historia">
+                <a href="historia.html"><img src="./assets/icons/icon-historia.svg" alt="História"></a>
+                <p class="principal-barra-legenda">História</p>
+            </div>
+            <div id="principal-barra-personagens">
+                <a href="personagens.html"><img src="./assets/icons/icon-personagens.svg" alt="Personagens"></a>
+                <p class="principal-barra-legenda">Personagens</p>
+            </div>
+            <div id="principal-barra-forum">
+                <a href="forum.html"><img src="../assets/icons/icon-forum.svg" alt="Fórum"></a>
+                <p class="principal-barra-legenda">Fórum</p>
+            </div>
+
+            <div class="principal-barra-dash auth">
+                <a href="./dashboard.html" id="barra-ativo"><img src="./assets/icons/icon-dashboard-brown.svg"
+                        alt="Dashboard"></a>
+                <p class="principal-barra-legenda">Dashboard</p>
+            </div>
+
+            <div class="principal-barra-config auth">
+                <a href="./configuracoes.html"><img src="../assets/icons/icon-config-brown.svg" alt="Configurações"
+                        style="width: 100%;"></a>
+                <p class="principal-barra-legenda">Configurações</p>
+            </div>
+        </article>
+
+
+        <section class="principal-config">
+            <div class="principal-config-information">
+                <div class="principal-config-img">
+                    <img src="./assets/home/icon-thorfinn-cadastrado.jpeg].jpg" alt="Icon Thorfinn">
+                    <h1>Usuário <span id="a-user"></span></h1>
+                </div>
+                <div>
+                    <h1>Total Posts:</h1>
+                </div>
+                <div>
+                    <h1>Categoria mais Utilizada:</h1>
+                </div>
+            </div>
+
+            <div class="principal-config-values">
+                <div>
+                    <p>Email: <span id="a-email"></span></p>
+                    <p>Data de Nascimento: <span id="a-dtNasc"></span></p>
+                </div>
+
+                <div>
+                    <h1>22</h1>
+                </div>
+
+                <div>
+                    <h1>Teorias</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="principal-container">
+            <div class="principal-container-chart">
+                <h1>Categoria Mais Utilizada:</h1>
+            </div>
+
+            <div class="principal-container-chart">
+                <h1>Posts Semanais:</h1>
+            </div>
+        </section>
+
+        <section>
+            <div>
+
+            </div>
+            <div>
+                <h1>Agradeço por usar e confiar na VegVin, juntos seremos melhores</h1>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé do site -->
+    <footer class="rodape">
+        <div class="rodape-logo">
+            <img src="./assets/logo.png" alt="Logo Vegvin">
+            <p>2025 - Todos os direitos reservados</p>
+        </div>
+
+        <div class="rodape-navegacao">
+            <div>
+                <p>VEGVIN</p>
+                <a href="">Home</a>
+                <a href="">Fórum</a>
+            </div>
+
+            <div>
+                <p>VINLAND SAGA</p>
+                <a href="">Personagens</a>
+                <a href="">História</a>
+            </div>
+
+            <div>
+                <p>REDES SOCIAIS</p>
+                <a href="">Instagram</a>
+                <a href="">Discord</a>
+                <a href="">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/global.js"></script>
+</body>
+
+</html>

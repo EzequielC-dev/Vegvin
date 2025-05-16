@@ -43,8 +43,9 @@ function cadastrarUsuario() {
         }
 
         fetch('/usuarios/cadastrar', header)
-        .then(() => {
-            Toastify({
+        .then((res) => {
+            if(res.ok) {
+                Toastify({
                 text: "Cadastro realizado com sucesso!",
                 duration: 3000,
                 destination: "https://github.com/apvarun/toastify-js",
@@ -62,10 +63,27 @@ function cadastrarUsuario() {
             setTimeout(() => {
                 window.location = "../login.html";
             }, 1000);
+            }
+            else {
+                Toastify({
+                    text: "Erro: E-mail já cadastrado!",
+                    duration: 3000,
+                    destination: "https://github.com/apvarun/toastify-js",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "right", 
+                    stopOnFocus: true,
+                    style: {
+                        background: '#EFB135',
+                        color: '#361E05',    
+                    },
+                }).showToast();
+            }
         })
         .catch(() => {
             Toastify({
-                text: "Erro: requisição não realizada!",
+                text: "Erro: cadastro não realizado!",
                 duration: 3000,
                 destination: "https://github.com/apvarun/toastify-js",
                 newWindow: true,

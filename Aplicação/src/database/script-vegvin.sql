@@ -10,6 +10,7 @@ CREATE TABLE usuario (
     tipo VARCHAR(25),
     CONSTRAINT chk_tipo CHECK (tipo IN ('administrador', 'membro'))
 );
+ALTER TABLE usuario MODIFY COLUMN email VARCHAR(45) UNIQUE;
 
 SELECT * FROM usuario;
 
@@ -39,3 +40,5 @@ CREATE TABLE comentario (
     CONSTRAINT fk_paiComentario FOREIGN KEY (fk_paiComentario) REFERENCES comentario(idComentario),
     PRIMARY KEY (idComentario, fk_topicos)
 );
+
+SELECT * FROM usuario;

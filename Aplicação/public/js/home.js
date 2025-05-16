@@ -1,6 +1,5 @@
 const principalPrevia = principal_previa;
 const containerName = document.getElementById('container-name');
-
 const todayDate = document.getElementById('today-date');
 const dateComplete = {
     day: new Date().getDate(),

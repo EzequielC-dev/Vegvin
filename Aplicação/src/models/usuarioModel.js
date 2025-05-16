@@ -7,6 +7,12 @@ function login(email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function autenticar(email) {
+    const instrucaoSql = `SELECT email FROM usuario WHERE email = '${email}'`;
+
+    return database.executar(instrucaoSql);
+}
+
 function cadastrar(username, email, senha, dtNasc) {    
     const instrucaoSql = `
         INSERT INTO usuario (username, email, senha, dtNasc) VALUES ('${username}', '${email}', '${senha}', '${dtNasc}');
@@ -16,5 +22,6 @@ function cadastrar(username, email, senha, dtNasc) {
 
 module.exports = {
     login,
+    autenticar,
     cadastrar
 };

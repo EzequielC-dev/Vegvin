@@ -17,6 +17,15 @@
     font-family: 'Inter', sans-serif, Arial, Helvetica;
 }
 
+.no-auth {
+    visibility: visible;
+}
+
+.auth {
+    display: none !important;
+    color: var(--marrom);
+}
+
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -53,6 +62,12 @@
 
 .normal-button {
     background-color: var(--amarelo);
+}
+
+.normal-button a, 
+#login a {
+    padding: 12%;
+    width: 100%;
 }
 
 .button-image {
@@ -132,9 +147,12 @@
     border-radius: 8px;
 }
 
-.principal-barra-config {
+.principal-barra-dash {
     padding-top: 2rem;
+}
 
+.principal-barra-dash img {
+    width: 50px;
 }
 
 .principal-barra-legenda {

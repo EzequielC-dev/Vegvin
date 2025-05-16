@@ -12,7 +12,7 @@ function login(req, res) {
 
         usuarioModel.login(email, senha)
         .then((resultado) => {
-            if(resultado.length > 0) {
+            if(resultado.length == 1) {
                 res.status(200).json(
                     {
                         username: resultado[0].username,
@@ -49,21 +49,35 @@ function cadastrar(req, res) {
         res.status(400).send("Sua data de nascimento está indefinida");
     } else {
 
-        usuarioModel.cadastrar(nome, email, senha, dtNasc)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "Houve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
+        usuarioModel.autenticar(email) 
+        .then((resultado) => {
+            if(resultado.length == 1) {
+                res.status(403).send("Esse email já existe!");
+                console.log("Esse e-mail já existe");
+            }
+            else if(resultado.length == 0) {
+
+                usuarioModel.cadastrar(nome, email, senha, dtNasc)
+                    .then(
+                        function (resultado) {
+                            res.json(resultado);
+                        }
+                    ).catch(
+                        function (erro) {
+                            console.log(erro);
+                            console.log("Houve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                            res.status(500).json(erro.sqlMessage);
+                        }
                     );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+            }
+            else {
+                res.status(400).send("Não é possível a existência de dois e-mails")
+            }
+        })
+        .catch((erro) => {
+            console.log('Erro:', erro);
+        })
+
     }
 }
 

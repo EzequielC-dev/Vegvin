@@ -20,7 +20,6 @@ function expanded() {
         barraLegenda.forEach((index) => {
             index.classList.toggle("legenda-ativa");
         })
-
     })
 }
 
@@ -29,6 +28,17 @@ if(sessionStorage.userEmail != undefined && sessionStorage.userName != undefined
         element.style.display = 'none';
     });
     auth.forEach((element) => {
-        element.style.display = 'flex';
+        element.setAttribute('style', 'display: flex !important');
+    });
+}
+
+leave.addEventListener('click', logout);
+
+function logout() {
+    sessionStorage.removeItem('userEmail');
+    sessionStorage.removeItem('userName');
+
+    auth.forEach(element => {
+        element.style.display = 'none';
     });
 }

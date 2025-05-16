@@ -206,15 +206,6 @@
     cursor: pointer;
 }
 
-.no-auth {
-    visibility: visible;
-}
-
-.auth {
-    display: none;
-    color: var(--marrom);
-}
-
 .principal-vinland-content {
     padding-top: 1rem;
     display: flex;

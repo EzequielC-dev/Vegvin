@@ -54,6 +54,22 @@ function loginUsuario() {
                         }, 1000);
                     });
                 }
+                else {
+                    Toastify({
+                        text: "Erro: não foi possível fazer Login!",
+                        duration: 3000,
+                        destination: "https://github.com/apvarun/toastify-js",
+                        newWindow: true,
+                        close: true,
+                        gravity: "top",
+                        position: "right", 
+                        stopOnFocus: true,
+                        style: {
+                            background: '#EFB135',
+                            color: '#361E05',    
+                        },
+                    }).showToast();            
+                }
     })
     .catch((erro) => {
         Toastify({

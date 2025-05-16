@@ -1,0 +1,57 @@
+ * {
+    color: var(--marrom);
+ }
+ 
+ .principal-config {
+    background-color: var(--amarelo);
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
+    text-align: center;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.principal-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.principal-config-information {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    text-wrap: nowrap;
+}
+
+.principal-config-img {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.principal-config-img img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.principal-config-values {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--amarelo-bg-comentario);
+    padding: 1rem;
+}
+
+.principal-container-chart {
+    background-color:  var(--amarelo);
+
+    padding: 1rem;
+    width: 50%;
+
+    border-radius: 4px;
+}
