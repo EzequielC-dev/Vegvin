@@ -61,7 +61,20 @@
     flex-direction: column;
     padding-bottom: 2rem;
     width: 25vw;
+}
 
+.acessibity-dark-mode {
+  display: flex;
+  padding-top: 1rem;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.information-data {
+  background-color: var(--amarelo-bg-comentario);
+  padding: 1rem;
+  border-radius: 4px;
 }
 
 .save-button {

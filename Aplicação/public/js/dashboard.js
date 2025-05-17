@@ -7,7 +7,6 @@ const email = document.getElementById("a-email");
 user.innerHTML = sessionStorage.userName;
 email.innerHTML = sessionStorage.userEmail;
 
-
  new Chart(category, {
     type: 'bar',
     data: {
