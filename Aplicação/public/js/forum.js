@@ -1,8 +1,16 @@
-const createTopic= document.getElementById("create-topic");
+const createTopic = document.getElementById("create-topic");
+const containerTopic = document.querySelector('.principal-create-topic ');
+const topicClose = document.querySelector(".topic-close");
+
+const blurElements = [ 
+  document.querySelector('.principal-forum'),
+  document.querySelector('.principal-navegacao-forum'),
+  document.querySelector('.cabecalho'),
+  document.querySelector('.rodape')
+];
+
 
 function verifyUser() {
-  console.log("Bom dia");
-
   if(sessionStorage.userName == undefined || sessionStorage.userEmail == undefined) {
   Toastify({
                     text: "Erro: somente usuários cadastrados podem criar tópicos!",
@@ -19,6 +27,23 @@ function verifyUser() {
                     },
                 }).showToast();
   }
-}
+  else {
+    for(i = 0; i < blurElements.length; i++) {
+      blurElements[i].style.filter = "blur(10px)";
+    }
 
-createTopic.addEventListener('click', verifyUser)
+      containerTopic.style.visibility = "visible";
+  }
+}
+createTopic.addEventListener('click', verifyUser);
+
+function closeTopic() {
+  const divTopic = document.querySelector(".principal-create-topic");
+
+  divTopic.style.visibility = "hidden";
+
+  for(i = 0; i < blurElements.length; i++) {
+    blurElements[i].style.filter = "blur(0px)"; 
+  }
+}
+topicClose.addEventListener('click', closeTopic);
