@@ -5,9 +5,9 @@ function login(req, res) {
     const senha = req.body.senha;
 
     if (email == undefined) {
-        res.status(400).send("Seu email está indefinido!");
+        res.status(204).send("Seu email está indefinido!");
     } else if (senha == undefined) {
-        res.status(400).send("Sua senha está indefinida!");
+        res.status(204).send("Sua senha está indefinida!");
     } else {
 
         usuarioModel.login(email, senha)

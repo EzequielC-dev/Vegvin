@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/config.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -74,7 +75,6 @@
                         <div class="information-data">
                             <p>Username: <span class="a-name"></span></p>
                             <p>Email: <span class="a-email"></span></p>
-                            <p>Data de Nascimento: <span id="a-dtNasc"></span></p>
                         </div>
                     </div>
                 </div>
@@ -87,24 +87,24 @@
                     <div>
                         <span>
                             <p>Nome</p>
-                            <input type="text">
+                            <input type="text" id="update-name">
                         </span>
 
                         <span>
                             <p>E-mail</p>
-                            <input type="text">
+                            <input type="text" id="update-email">
                         </span>
                     </div>
 
                     <div>
                         <span>
                             <p>Senha</p>
-                            <input type="text">
+                            <input type="text" id="update-password">
                         </span>
 
                         <span>
                             <p>Data de Nascimento</p>
-                            <input type="date">
+                            <input type="date" id="update-dtNasc">
                         </span>
                     </div>
                 </div>
@@ -158,7 +158,8 @@
     </footer>
 
     <script src="./js/global.js"></script>
-    <script src="./js/config.js"></script>
+    <script src="./js/settings.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>

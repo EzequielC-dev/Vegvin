@@ -179,7 +179,7 @@
     font-size: 1.6rem;
 }
 
-.principal-create-topic input {
+.principal-create-topic input, #topic-category {
     width: 70%;
     padding: 0.5rem;
     border-radius: 4px;
@@ -205,3 +205,11 @@
     left: 25rem;
     width: 3rem;
 }
+
+#topic-select {
+    padding: 1rem;
+}
+/* 
+.topic-select-test {
+    padding: 1rem;
+} */

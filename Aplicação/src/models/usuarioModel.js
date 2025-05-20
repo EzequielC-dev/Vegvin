@@ -1,4 +1,4 @@
-var database = require("../database/config")
+const database = require("../database/config")
 
 function login(email, senha) {
     const instrucaoSql = `
