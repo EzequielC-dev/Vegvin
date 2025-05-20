@@ -1,5 +1,9 @@
 const forumModel = require("../models/forumModel");
 
+function viewTopics(req, res) {
+
+}
+
 function postTopic(req, res) {
     const title = req.body.title;
     const category = req.body.category;
@@ -25,5 +29,6 @@ function postTopic(req, res) {
 }
 
 module.exports = {
-    postTopic
+    postTopic,
+    viewTopics
 }

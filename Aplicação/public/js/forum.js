@@ -1,6 +1,7 @@
 const createTopic = document.getElementById("create-topic");
 const containerTopic = document.querySelector('.principal-create-topic ');
 const topicClose = document.querySelector(".topic-close");
+const topicPostButton = document.getElementById("topic-post");
 
 const blurElements = [ 
   document.querySelector('.principal-forum'),
@@ -9,7 +10,18 @@ const blurElements = [
   document.querySelector('.rodape')
 ];
 
-const topicPostButton = document.getElementById("topic-post");
+window.addEventListener('DOMContentLoaded', viewPosts);
+
+function viewPosts() {
+  fetch('http://localhost:3333/forum/viewTopics')
+  .then(res => res.json())
+  .then((data) => {
+    console.log('certo', data);
+  })
+  .catch((error) => {
+    console.log('erro', error);
+  })
+}
 
 function verifyUser() {
   if(sessionStorage.userName == undefined || sessionStorage.userEmail == undefined) {
