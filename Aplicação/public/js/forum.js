@@ -14,9 +14,15 @@ window.addEventListener('DOMContentLoaded', viewPosts);
 
 function viewPosts() {
   fetch('http://localhost:3333/forum/viewTopics')
-  .then(res => res.json())
+  .then((res) => {
+    if(res.ok) {
+      return res.json();
+    }
+  })
   .then((data) => {
-    console.log('certo', data);
+    // data.forEach((post) => {
+
+    // })
   })
   .catch((error) => {
     console.log('erro', error);

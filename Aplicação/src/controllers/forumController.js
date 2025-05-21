@@ -2,6 +2,16 @@ const forumModel = require("../models/forumModel");
 
 function viewTopics(req, res) {
 
+
+    forumModel.viewTopics()
+    .then((result) => {
+        if(result) {
+            res.status(200).json(result);
+        }
+    })
+    .catch((error) => {
+        res.status(400).send("Não foi possível ver os tópicos", error);
+    })
 }
 
 function postTopic(req, res) {
