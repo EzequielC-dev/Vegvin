@@ -1,7 +1,7 @@
 const database = require("../database/config");
 
 function viewTopics() {
-    const sqlInstruction = `SELECT * FROM topico LIMIT 5`;
+    const sqlInstruction = `SELECT * FROM topico ORDER BY idTopico DESC LIMIT 10;`;
 
     return database.executar(sqlInstruction);
 }

@@ -20,9 +20,25 @@ function viewPosts() {
     }
   })
   .then((data) => {
-    // data.forEach((post) => {
+    const userPosts = document.querySelector(".principal-forum-comentarios");
 
-    // })
+    if(data.length == 0) {
+      userPosts.innerHTML = `<div class="comentario">
+                                <h1>Ainda não há posts!<h1>
+                                <img src="././assets/forum/thorfinn-sad.jpg" alt="thorfinn sad" style="width: 100%; object-fit: cover; padding-top: 1rem">
+                              <div>`;
+    }
+    else {
+      data.forEach((post) => {
+      const divPost = document.createElement("div");
+      divPost.classList.add("comentario");
+
+      divPost.innerHTML = `${post.titulo} - ${post.categoria}`;
+      userPosts.appendChild(divPost);
+    })
+    }
+
+    
   })
   .catch((error) => {
     console.log('erro', error);
@@ -119,6 +135,7 @@ function postTopic() {
 
           setTimeout(() => {
             closeTopic();
+            window.location.reload();
           }, 1500);
     }
     else {
