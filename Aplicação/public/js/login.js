@@ -46,6 +46,7 @@ function loginUsuario() {
                     }).showToast();           
                     
                     resposta.json().then(json => {
+                        sessionStorage.userID = json.userID;
                         sessionStorage.userEmail = json.email;
                         sessionStorage.userName = json.username;
 

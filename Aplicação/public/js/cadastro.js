@@ -58,11 +58,12 @@ function cadastrarUsuario() {
                     background: '#EFB135',
                     color: '#361E05',    
                 },
-            }).showToast();
+                }).showToast();
 
-            setTimeout(() => {
-                window.location = "../login.html";
-            }, 1000);
+                setTimeout(() => {
+                    window.location = "../login.html";
+                }, 1000);
+
             }
             else {
                 Toastify({

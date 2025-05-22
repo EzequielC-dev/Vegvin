@@ -33,7 +33,7 @@ function viewPosts() {
       const divPost = document.createElement("div");
       divPost.classList.add("comentario");
 
-      divPost.innerHTML = `${post.titulo} - ${post.categoria}`;
+      divPost.innerHTML = `<a href="topico.html">${post.titulo} - ${post.categoria}</a>`;
       userPosts.appendChild(divPost);
     })
     }
