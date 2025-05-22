@@ -31,9 +31,13 @@ function viewPosts() {
     else {
       data.forEach((post) => {
       const divPost = document.createElement("div");
+      const divUser = document.createElement("div");
+      
       divPost.classList.add("comentario");
 
-      divPost.innerHTML = `<p>${post.categoria}</p><p>Usuário: ${post.username} (${post.email})</p><a href="topico.html">${post.titulo}</a>`;
+      divUser.innerHTML = `<img src="./assets/forum/default-image.jpg" alt="default-icon"><p>Usuário: ${post.username} (${post.email})</p>`
+      divPost.innerHTML = divUser.innerHTML;
+      divPost.innerHTML += `<p>${post.categoria}</p><a href="topico.html">${post.titulo}</a>`;
       userPosts.appendChild(divPost);
     })
     }
