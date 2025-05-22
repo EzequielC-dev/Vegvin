@@ -87,6 +87,8 @@ topicClose.addEventListener('click', closeTopic);
 function postTopic() {
   const title = document.getElementById("topic-title").value;
   const category = document.getElementById("topic-category").value;
+  const userID = sessionStorage.userID;
+
   const header = {
     method: "POST",
     headers: {
@@ -94,7 +96,8 @@ function postTopic() {
     },
     body: JSON.stringify({
       title: title,
-      category: category
+      category: category,
+      userID: userID
     })
   }
 

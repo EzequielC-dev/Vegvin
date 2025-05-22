@@ -6,9 +6,9 @@ function viewTopics() {
     return database.executar(sqlInstruction);
 }
 
-function postTopic(titulo, categoria) {
+function postTopic(titulo, categoria, fkUsuario) {
     const sqlInstruction = `
-        INSERT INTO topico (titulo, categoria) VALUES ('${titulo}', '${categoria}');`
+        INSERT INTO topico (titulo, categoria, fk_usuario) VALUES ('${titulo}', '${categoria}', ${fkUsuario});`
     return database.executar(sqlInstruction);
 }
 
