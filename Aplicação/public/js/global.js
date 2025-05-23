@@ -32,8 +32,6 @@ if(sessionStorage.userEmail != undefined && sessionStorage.userName != undefined
     });
 }
 
-leave.addEventListener('click', logout);
-
 function logout() {
     sessionStorage.removeItem('userEmail');
     sessionStorage.removeItem('userName');
@@ -42,3 +40,5 @@ function logout() {
         element.style.display = 'none';
     });
 }
+
+leave.addEventListener('click', logout);

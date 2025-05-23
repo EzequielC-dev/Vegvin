@@ -10,8 +10,6 @@ const blurElements = [
   document.querySelector('.rodape')
 ];
 
-window.addEventListener('DOMContentLoaded', viewPosts);
-
 function viewPosts() {
   fetch('http://localhost:3333/forum/viewTopics')
   .then((res) => {
@@ -33,6 +31,7 @@ function viewPosts() {
       const divPost = document.createElement("div");
       
       divPost.classList.add("comentario");
+      divPost.setAttribute('id', `${post.idTopico}`);
 
       divPost.innerHTML = `<p class="categoria">${post.categoria}</p>`
       divPost.innerHTML += `<div class="comentario-user"><img src="./assets/forum/default-image.jpg" alt="default-icon"><p>Usuário: ${post.username} (${post.email})</p></div>`;
@@ -73,7 +72,6 @@ function verifyUser() {
     containerTopic.style.visibility = "visible";
   }
 }
-createTopic.addEventListener('click', verifyUser);
 
 function closeTopic() {
   const divTopic = document.querySelector(".principal-create-topic");
@@ -84,8 +82,6 @@ function closeTopic() {
     blurElements[i].style.filter = "blur(0px)"; 
   }
 }
-topicClose.addEventListener('click', closeTopic);
-
 
 function postTopic() {
   const title = document.getElementById("topic-title").value;
@@ -166,4 +162,8 @@ function postTopic() {
   })
   }
 }
+
+window.addEventListener('DOMContentLoaded', viewPosts);
+createTopic.addEventListener('click', verifyUser);
+topicClose.addEventListener('click', closeTopic);
 topicPostButton.addEventListener('click', postTopic);
