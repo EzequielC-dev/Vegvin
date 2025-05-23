@@ -185,7 +185,6 @@ function updateData() {
     }
 }
 
-buttonUpdate.addEventListener('click', updateData);
 
 function refreshEmailUser(data) {
     sessionStorage.userEmail = data;
@@ -196,3 +195,5 @@ function refreshNameUser(data) {
     sessionStorage.userName = data;
     window.location.reload();
 }
+
+buttonUpdate.addEventListener('click', updateData);

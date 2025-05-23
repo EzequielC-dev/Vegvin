@@ -18,7 +18,8 @@ function login(req, res) {
                         userID: resultado[0].idUsuario,
                         username: resultado[0].username,
                         email: resultado[0].email,
-                        senha: resultado[0].senha
+                        senha: resultado[0].senha,
+                        dtNasc: resultado[0].dtNasc
                     }
                 )
             }

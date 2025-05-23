@@ -35,8 +35,11 @@ function viewPosts() {
 
       divPost.innerHTML = `<p class="categoria">${post.categoria}</p>`
       divPost.innerHTML += `<div class="comentario-user"><img src="./assets/forum/default-image.jpg" alt="default-icon"><p>Usuário: ${post.username} (${post.email})</p></div>`;
-      divPost.innerHTML += `<a href="topico.html">${post.titulo}</a>`;
+      divPost.innerHTML += `<a href="topic.html">${post.titulo}</a>`;
       userPosts.appendChild(divPost);
+
+      divPost.addEventListener('click', openTopicComments)
+        
     })
     }
 
@@ -161,6 +164,10 @@ function postTopic() {
     console.log(`Erro: ${error}`)
   })
   }
+}
+
+function openTopicComments() {
+  fetch
 }
 
 window.addEventListener('DOMContentLoaded', viewPosts);

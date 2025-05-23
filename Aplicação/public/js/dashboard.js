@@ -3,9 +3,12 @@ const post = document.getElementById("container-chart-post");
 
 const user = document.getElementById("a-user");
 const email = document.getElementById("a-email");
+const birthday = document.getElementById("a-birthday");
+const userBirthday = sessionStorage.userBirthday;
 
 user.innerHTML = sessionStorage.userName;
 email.innerHTML = sessionStorage.userEmail;
+birthday.innerHTML = userBirthday.substring(0, 10);
 
  new Chart(category, {
     type: 'bar',
