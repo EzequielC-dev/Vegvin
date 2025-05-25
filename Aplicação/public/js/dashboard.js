@@ -51,6 +51,8 @@ birthday.innerHTML = userBirthday.substring(0, 10);
   });
 
 function totalPosts() {
+  const totalPosts = document.getElementById("user-totalPosts");
+
   const header = {
     method: "POST",
     headers: {
@@ -65,7 +67,7 @@ function totalPosts() {
   .then((result) => {
     result.json()
     .then((json) => {
-      console.log(json[0].total);
+      totalPosts.innerHTML = `<h1>${json[0].total}</h1>`
     })
   })
   .catch((error) => {
@@ -73,4 +75,31 @@ function totalPosts() {
   })
 }
 
+function mostUsedCategory() {
+  const category = document.getElementById("user-mostUsedCategory");
+  const userID = sessionStorage.userID;
+  const header = {
+    method: "POST",
+    headers: {
+      "Content-Type": "Application/json"
+    },    
+    body: JSON.stringify({
+      userID: userID
+    })
+  }
+
+  fetch('http://localhost:3333/dashboard/mostUsedCategory', header)
+  .then((result) => {
+    result.json()
+    .then((json) => {
+      category.innerHTML = `<h1>${json[0].categoria}</h1>`
+    })
+  })
+  .catch((error) => {
+    console.log("Erro: não foi possível pegar a categoria mais usada", error);
+  })
+
+}
+
 window.addEventListener("DOMContentLoaded", totalPosts);
+window.addEventListener("DOMContentLoaded", mostUsedCategory);

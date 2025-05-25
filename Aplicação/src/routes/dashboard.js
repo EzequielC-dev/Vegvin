@@ -7,4 +7,8 @@ router.post("/totalPosts", function(req, res) {
     dashboardController.totalPosts(req, res);
 })
 
+router.post("/mostUsedCategory", function(req, res) {
+    dashboardController.mostUsedCategory(req, res);
+})
+
 module.exports = router;

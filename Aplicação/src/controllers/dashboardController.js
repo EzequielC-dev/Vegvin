@@ -17,6 +17,24 @@ function totalPosts(req, res) {
     }
 }
 
+function mostUsedCategory(req, res) {
+    const userId = req.body.userID;
+
+    if(userId == undefined) {
+        res.status(500).send("Seu ID do usuário está como indefinido!");
+    }
+    else {
+        dashboardModel.mostUsedCategory(userId)
+        .then((result) => {
+            res.status(200).json(result);
+        })
+        .catch((error) => {
+            res.status(500).send("Erro: não foi possível pegar a categoria mais usada", error);
+        }) 
+    }
+}
+
 module.exports = {
-    totalPosts
+    totalPosts,
+    mostUsedCategory
 }
