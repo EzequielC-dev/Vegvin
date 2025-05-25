@@ -49,3 +49,28 @@ birthday.innerHTML = userBirthday.substring(0, 10);
       }
     }
   });
+
+function totalPosts() {
+  const header = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    }, 
+    body: JSON.stringify({
+      userID: sessionStorage.userID
+    })
+  }
+
+  fetch('http://localhost:3333/dashboard/totalPosts', header) 
+  .then((result) => {
+    result.json()
+    .then((json) => {
+      console.log(json[0].total);
+    })
+  })
+  .catch((error) => {
+    console.log("Erro ao pegar total de Posts do usuário", error);
+  })
+}
+
+window.addEventListener("DOMContentLoaded", totalPosts);
