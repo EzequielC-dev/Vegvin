@@ -101,5 +101,38 @@ function mostUsedCategory() {
 
 }
 
+function historyPosts() {
+  const header = {
+    method: "POST",
+    headers: {
+      "Content-Type": "Application/json"
+    },
+    body: JSON.stringify({
+      userID: sessionStorage.userID
+    })
+  }
+
+  fetch("http://localhost:3333/dashboard/historyPosts", header)
+  .then((res) => {
+    if(res.ok) {
+      return res.json();
+    }
+  })
+  .then((data) => {
+    divPosts = document.querySelector(".history-user-posts");
+
+    console.log(data);
+
+    data.forEach(post => {
+      divPosts.innerHTML += `${post.titulo} ${post.categoria} ${post.dataPublicacao} <br>` 
+    });
+  })
+  .catch((error) => {
+    console.log("Está dando errado", error);
+  })
+
+}
+
 window.addEventListener("DOMContentLoaded", totalPosts);
 window.addEventListener("DOMContentLoaded", mostUsedCategory);
+window.addEventListener("DOMContentLoaded", historyPosts);

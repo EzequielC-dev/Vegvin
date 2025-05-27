@@ -12,7 +12,17 @@ function mostUsedCategory(fk_usuario) {
     return database.executar(sqlInstruction);
 }
 
+function historyPosts(id_usuario) {
+    const sqlInstruction = `
+    SELECT topico.titulo, topico.categoria, topico.dataPublicacao FROM topico 
+    JOIN usuario WHERE idUsuario = ${id_usuario} ORDER BY idTopico DESC LIMIT 6;
+    `
+    
+    return database.executar(sqlInstruction);
+}
+
 module.exports = {
     totalPosts,
-    mostUsedCategory
+    mostUsedCategory,
+    historyPosts
 }

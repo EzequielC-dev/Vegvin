@@ -34,7 +34,25 @@ function mostUsedCategory(req, res) {
     }
 }
 
+function historyPosts(req, res) {
+    const userId = req.body.userID;
+
+    if(userId == undefined) {
+        res.status(500).send("Seu ID do usuário está como indefinido");
+    }
+    else {
+        dashboardModel.historyPosts(userId)
+        .then((result) => {
+            res.status(200).json(result);
+        })
+        .catch((error) => {
+            res.status(500).send("Erro: não foi possível pegar o histórico de posts", error);
+        })
+    }
+}
+
 module.exports = {
     totalPosts,
-    mostUsedCategory
+    mostUsedCategory,
+    historyPosts
 }

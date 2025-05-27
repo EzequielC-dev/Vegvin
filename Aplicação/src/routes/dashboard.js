@@ -11,4 +11,8 @@ router.post("/mostUsedCategory", function(req, res) {
     dashboardController.mostUsedCategory(req, res);
 })
 
+router.post("/historyPosts", function(req, res) {
+    dashboardController.historyPosts(req, res);
+})
+
 module.exports = router;
