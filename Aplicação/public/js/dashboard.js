@@ -124,7 +124,7 @@ function historyPosts() {
     console.log(data);
 
     data.forEach(post => {
-      divPosts.innerHTML += `${post.titulo} ${post.categoria} ${post.dataPublicacao} <br>` 
+      divPosts.innerHTML += `<div class="history-post-data"><a href="topic.html"><span class="history-post-span"><img src="../assets/icons/icon-topic.svg"><h3>${post.titulo}</h3></span> <p>Titulo: ${post.categoria}</p> <p>Data da Publicação: ${post.dataPublicacao.substring(0, 10)}</p></a></div>` 
     });
   })
   .catch((error) => {
