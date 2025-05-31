@@ -15,4 +15,8 @@ router.post("/historyPosts", function(req, res) {
     dashboardController.historyPosts(req, res);
 })
 
+router.post("/viewCategoriesDashboard", function(req, res) {
+    dashboardController.viewCategoriesDashboard(req, res);
+})
+
 module.exports = router;
