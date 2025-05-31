@@ -1,15 +1,14 @@
 const principalPrevia = principal_previa;
-const containerName = document.getElementById('container-name');
-const todayDate = document.getElementById('today-date');
+const containerName = document.getElementById("container-name");
+const todayDate = document.getElementById("today-date");
 const dateComplete = {
-    day: new Date().getDate(),
-    month: new Date().getMonth() + 1,
-    year: new Date().getFullYear()
-}
-
+  day: new Date().getDate(),
+  month: new Date().getMonth() + 1,
+  year: new Date().getFullYear(),
+};
 
 function historia() {
-    principalPrevia.innerHTML = `<div>
+  principalPrevia.innerHTML = `<div>
                 <div class="principal-previa-navegacao">
                     <button id="ativo" onclick="historia()" id="ativo">
                         HISTÓRIA
@@ -60,7 +59,7 @@ function historia() {
 }
 
 function personagem() {
-    principalPrevia.innerHTML = `<div>
+  principalPrevia.innerHTML = `<div>
                 <div class="principal-previa-navegacao">
                     <button onclick="historia()">
                         HISTÓRIA
@@ -97,11 +96,11 @@ function personagem() {
 
             <div class="principal-previa-imagem">
                 <img src="./assets/home/banner-personagens-2.jpg" alt="Banner Personagens">
-            </div>`
+            </div>`;
 }
 
 function forum() {
-    principalPrevia.innerHTML = `            <div>
+  principalPrevia.innerHTML = `            <div>
                 <div class="principal-previa-navegacao">
                     <button onclick="historia()">
                         HISTÓRIA
@@ -137,11 +136,11 @@ function forum() {
 
             <div class="principal-previa-imagem">
                 <img src="./assets/home/banner-forum.jpg" alt="Banner Fórum">
-            </div>`
+            </div>`;
 }
 
 function vegvin() {
-    principalPrevia.innerHTML = `
+  principalPrevia.innerHTML = `
                     <div>
                 <div class="principal-previa-navegacao">
                     <button onclick="historia()">
@@ -193,12 +192,15 @@ function vegvin() {
             <div class="principal-previa-imagem">
                 <img src="./assets/home/banner-vegvin.png" alt="Banner Vegvin">
             </div>
-    `
+    `;
 }
 
-if(sessionStorage.userEmail != undefined && sessionStorage.userName != undefined) {
-    const username = sessionStorage.getItem('userName');
-    containerName.innerHTML = username;
+if (
+  sessionStorage.userEmail != undefined &&
+  sessionStorage.userName != undefined
+) {
+  const username = sessionStorage.getItem("userName");
+  containerName.innerHTML = username;
 }
 
 todayDate.innerHTML = `${dateComplete.day}/${dateComplete.month}/${dateComplete.year}`;
