@@ -9,9 +9,6 @@ function mudarImagem(idImagem, caminhoBase) {
   const background = document.getElementById(idImagem);
   let contador = contadores[idImagem];
 
-  console.log(background);
-  console.log(contador);
-
   if (contador == 1) {
     background.setAttribute("src", `${caminhoBase}.png`);
   } else if (contador == 2) {

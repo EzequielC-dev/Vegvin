@@ -78,6 +78,10 @@
 
      padding: 1rem;
      border-radius: 4px;
+
+     div {
+        padding: 1rem;
+     }
  }
 
  .history-user-posts {
@@ -91,13 +95,21 @@
      overflow-y: scroll;
  }
 
+ .history-user-posts::-webkit-scrollbar {
+  width: 1rem;
+}
+.history-user-posts::-webkit-scrollbar-track {
+  background: var(--branco);
+}
+.history-user-posts::-webkit-scrollbar-thumb {
+  background: var(--marrom);
+}
+
  .history-post-data {
      padding: 1rem;
      background-color: var(--amarelo-bg-comentario);
      border-radius: 8px;
      width: 95%;
-
-
 
      a {
          display: flex;
