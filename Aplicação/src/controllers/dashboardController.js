@@ -74,9 +74,27 @@ function viewCategoriesDashboard(req, res) {
   }
 }
 
+function viewWeeklyPosts(req, res) {
+  const userId = req.body.userId;
+
+  if (userId == undefined) {
+    res.status(500).send("Seu ID do usuário está indefinido!");
+  } else {
+    dashboardModel
+      .viewWeeklyPosts(userId)
+      .then((result) => {
+        res.status(200).json(result);
+      })
+      .catch((error) => {
+        console.log("Erro: não foi possível pegar os posts semanais", error);
+      });
+  }
+}
+
 module.exports = {
   totalPosts,
   mostUsedCategory,
   historyPosts,
   viewCategoriesDashboard,
+  viewWeeklyPosts,
 };

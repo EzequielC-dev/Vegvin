@@ -93,7 +93,7 @@
 
  .history-post-data {
      padding: 1rem;
-     border: 6px solid var(--amarelo-bg-comentario);
+     background-color: var(--amarelo-bg-comentario);
      border-radius: 8px;
      width: 95%;
 

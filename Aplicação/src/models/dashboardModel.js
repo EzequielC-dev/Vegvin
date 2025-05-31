@@ -38,9 +38,25 @@ function viewCategoriesDashboard(id_usuario) {
   return database.executar(sqlInstruction);
 }
 
+function viewWeeklyPosts(id_usuario) {
+  sqlInstruction = `
+        SELECT dias.DiaSemana AS 'Dia', IFNULL(qtd.Quantidade, 0) AS 'Quantidade'
+            FROM (SELECT 1 AS DiaSemana UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7
+            ) AS dias
+        LEFT JOIN (
+            SELECT DAYOFWEEK(t.dataPublicacao) AS DiaSemana,
+            COUNT(*) AS Quantidade
+        FROM topico t
+        WHERE fk_usuario = ${id_usuario}
+        GROUP BY DAYOFWEEK(t.dataPublicacao)) AS qtd ON dias.DiaSemana = qtd.DiaSemana ORDER BY dias.DiaSemana;`;
+
+  return database.executar(sqlInstruction);
+}
+
 module.exports = {
   totalPosts,
   mostUsedCategory,
   historyPosts,
   viewCategoriesDashboard,
+  viewWeeklyPosts,
 };

@@ -19,4 +19,8 @@ router.post("/viewCategoriesDashboard", function (req, res) {
   dashboardController.viewCategoriesDashboard(req, res);
 });
 
+router.post("/viewWeeklyPosts", function (req, res) {
+  dashboardController.viewWeeklyPosts(req, res);
+});
+
 module.exports = router;

@@ -10,36 +10,6 @@ user.innerHTML = sessionStorage.userName;
 email.innerHTML = sessionStorage.userEmail;
 birthday.innerHTML = userBirthday.substring(0, 10);
 
-new Chart(post, {
-  type: "line",
-  data: {
-    labels: [
-      "Domingo",
-      "Segunda",
-      "Terça",
-      "Quarta",
-      "Quinta",
-      "Sexta",
-      "Sábado",
-    ],
-    datasets: [
-      {
-        label: "Posts Semanais",
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1,
-        backgroundColor: "#361E05",
-      },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-});
-
 function totalPosts() {
   const totalPosts = document.getElementById("user-totalPosts");
 
@@ -169,11 +139,69 @@ function viewCategoriesDashboard() {
           },
         },
       });
-
-      console.log(data);
     })
     .catch((error) => {
-      console.log("Dando errado", error);
+      console.log("Não foi possível fazer a requisição", error);
+    });
+}
+
+function viewWeeklyPosts() {
+  const header = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId: sessionStorage.userID,
+    }),
+  };
+
+  fetch("http://localhost:3333/dashboard/viewWeeklyPosts", header)
+    .then((result) => {
+      if (result.ok) {
+        result.json().then((json) => {
+          new Chart(post, {
+            type: "line",
+            data: {
+              labels: [
+                "Domingo",
+                "Segunda",
+                "Terça",
+                "Quarta",
+                "Quinta",
+                "Sexta",
+                "Sábado",
+              ],
+              datasets: [
+                {
+                  label: "Quantidade do dia",
+                  data: [
+                    json[0].Quantidade,
+                    json[1].Quantidade,
+                    json[2].Quantidade,
+                    json[3].Quantidade,
+                    json[4].Quantidade,
+                    json[5].Quantidade,
+                    json[6].Quantidade,
+                  ],
+                  borderWidth: 5,
+                  backgroundColor: "#361E05",
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+        });
+      }
+    })
+    .catch((error) => {
+      console.log("Não foi possível fazer a requisição", error);
     });
 }
 
@@ -181,3 +209,4 @@ window.addEventListener("DOMContentLoaded", totalPosts);
 window.addEventListener("DOMContentLoaded", mostUsedCategory);
 window.addEventListener("DOMContentLoaded", historyPosts);
 window.addEventListener("DOMContentLoaded", viewCategoriesDashboard);
+window.addEventListener("DOMContentLoaded", viewWeeklyPosts);
