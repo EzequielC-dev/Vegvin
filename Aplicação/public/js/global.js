@@ -35,6 +35,15 @@ if (
   });
 }
 
+window.onload = () => {
+  const theme = sessionStorage.getItem("userTheme");
+  if (theme === "dark") {
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
+};
+
 function logout() {
   sessionStorage.removeItem("userEmail");
   sessionStorage.removeItem("userName");

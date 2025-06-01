@@ -51,6 +51,7 @@ function loginUsuario() {
             sessionStorage.userEmail = json.email;
             sessionStorage.userName = json.username;
             sessionStorage.userBirthday = json.dtNasc;
+            sessionStorage.setItem("userTheme", "light");
 
             setTimeout(() => {
               window.location.href = "../index.html";

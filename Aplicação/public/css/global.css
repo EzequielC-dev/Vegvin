@@ -10,6 +10,30 @@
     --cinza: #9695945d;
 }
 
+body.dark {
+    --amarelo: #b98b3a;
+    --amarelo-bg-ativo: #e2c173;
+    --amarelo-bg-comentario: rgb(105, 104, 94);
+
+    
+    --preto: #000;
+    --cinza-escuro: #1A1A1A;
+    --cinza: #2A2A2A;
+    --cinza-claro: #3A3A3A;
+    --cinza-borda: #4A4A4A;
+
+    --marrom: #e2ddd7;
+    --marrom-escuro: #2E1C0C;
+    --branco: #1A1A1A; 
+
+    background-color: var(--cinza-escuro);
+    .principal-barra {
+        img {
+        filter: invert(100%), contrast(140%);
+        }
+    }
+}
+
 * {
     padding: 0;
     margin: 0;

@@ -2,6 +2,9 @@ const user = document.querySelectorAll(".a-name");
 const email = document.querySelectorAll(".a-email");
 const buttonUpdate = document.querySelector(".save-button");
 
+const darkButton = document.getElementById("box-dark");
+let contTheme = 0;
+
 user.forEach((index) => {
   index.innerHTML = sessionStorage.userName;
 });
@@ -190,4 +193,16 @@ function refreshNameUser(data) {
   window.location.reload();
 }
 
+function switchTheme() {
+  contTheme++;
+  document.body.classList.toggle("dark");
+  sessionStorage.userTheme = "dark";
+
+  if (contTheme >= 2) {
+    sessionStorage.userTheme = "light";
+    contTheme = 0;
+  }
+}
+
+darkButton.addEventListener("click", switchTheme);
 buttonUpdate.addEventListener("click", updateData);
