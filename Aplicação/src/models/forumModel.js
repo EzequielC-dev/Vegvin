@@ -12,7 +12,13 @@ function postTopic(titulo, categoria, fkUsuario) {
   return database.executar(sqlInstruction);
 }
 
+function topUsersPosts() {
+  const sqlInstruction = `SELECT email, COUNT(*) as 'Quantidade' FROM topico JOIN usuario ON fk_usuario = idusuario GROUP BY fk_usuario ORDER BY COUNT(*) DESC LIMIT 5;`;
+  return database.executar(sqlInstruction);
+}
+
 module.exports = {
   postTopic,
   viewTopics,
+  topUsersPosts,
 };

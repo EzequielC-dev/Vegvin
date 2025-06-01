@@ -36,8 +36,6 @@ function viewPosts() {
           divPost.innerHTML += `<div class="comentario-user"><img src="./assets/forum/default-image.jpg" alt="default-icon"><p>Usuário: ${post.username} (${post.email})</p></div>`;
           divPost.innerHTML += `<a href="topic.html">${post.titulo}</a>`;
           userPosts.appendChild(divPost);
-
-          divPost.addEventListener("click", openTopicComments);
         });
       }
     })
@@ -162,11 +160,37 @@ function postTopic() {
   }
 }
 
-function openTopicComments() {
-  fetch;
+function topUsersPosts() {
+  fetch("http://localhost:3333/forum/topUsersPosts")
+    .then((result) => {
+      if (result.ok) {
+        result.json().then((top) => {
+          const topUsers = document.querySelector(".forum-top-usuarios");
+          let contador = 1;
+
+          top.forEach((user) => {
+            topUsers.innerHTML += `
+                       <span>
+                            <img src="https://i.pinimg.com/736x/16/e9/86/16e986a5edab32fa9d3d7bacd308ddea.jpg"
+                                alt="Foto de Perfil Usuário">
+                            <div>
+                                <p><b>${contador}. ${user.email} </b></p>
+                                <p>${user.Quantidade} posts</p>
+                            </div>
+                        </span>
+            `;
+            contador++;
+          });
+        });
+      }
+    })
+    .catch((error) => {
+      console.log("Erro, não foi possível pegar Top Usuários!", error);
+    });
 }
 
 window.addEventListener("DOMContentLoaded", viewPosts);
+window.addEventListener("DOMContentLoaded", topUsersPosts);
 createTopic.addEventListener("click", verifyUser);
 topicClose.addEventListener("click", closeTopic);
 topicPostButton.addEventListener("click", postTopic);

@@ -38,7 +38,19 @@ function postTopic(req, res) {
   }
 }
 
+function topUsersPosts(req, res) {
+  forumModel
+    .topUsersPosts()
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((error) => {
+      res.status(400).send("Não foi possível ver o Top Usuários", error);
+    });
+}
+
 module.exports = {
   postTopic,
   viewTopics,
+  topUsersPosts,
 };
