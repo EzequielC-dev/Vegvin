@@ -1,9 +1,13 @@
 const user = document.querySelectorAll(".a-name");
 const email = document.querySelectorAll(".a-email");
 const buttonUpdate = document.querySelector(".save-button");
-
 const darkButton = document.getElementById("box-dark");
+
 let contTheme = 0;
+
+if (sessionStorage.userTheme != "light") {
+  contTheme = 1;
+}
 
 user.forEach((index) => {
   index.innerHTML = sessionStorage.userName;
