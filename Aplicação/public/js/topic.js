@@ -1,5 +1,6 @@
 const params = window.location.search;
 const id = params.substring(1);
+const buttonAddComment = document.getElementById("button-add-comment");
 
 function openTopicPage() {
   const header = {
@@ -40,4 +41,21 @@ function openTopicPage() {
     });
 }
 
+function addComment() {
+  const commentInput = document.getElementById("input_comment").value;
+  const header = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: {
+      userID: sessionStorage.userID,
+      comment: commentInput,
+    },
+  };
+
+  fetch("http://localhost:3333/topic/addComment", header);
+}
+
 window.addEventListener("DOMContentLoaded", openTopicPage);
+buttonAddComment.addEventListener("click", addComment);

@@ -3,8 +3,8 @@ const router = express.Router();
 
 const topicController = require("../controllers/topicController");
 
-router.get("/viewTopic", function (req, res) {
-  topicController.viewTopic(req, res);
+router.post("/addComment", function (req, res) {
+  topicController.addComment(req, res);
 });
 
 module.exports = router;

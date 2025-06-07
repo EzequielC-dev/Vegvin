@@ -18,6 +18,7 @@ const usuarioRouter = require("./src/routes/usuarios");
 const forumRouter = require("./src/routes/forum");
 const settingRouter = require("./src/routes/setting");
 const dashboardRouter = require("./src/routes/dashboard");
+const topicRouter = require("./src/routes/topic");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,6 +31,7 @@ app.use("/usuarios", usuarioRouter);
 app.use("/forum", forumRouter);
 app.use("/setting", settingRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/topic", topicRouter);
 
 app.listen(PORTA_APP, function () {
   console.log(`                                                                                           
