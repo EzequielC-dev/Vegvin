@@ -17,8 +17,19 @@ function topUsersPosts() {
   return database.executar(sqlInstruction);
 }
 
+function openTopicPage(idTopic) {
+  const sqlInstruction = `
+    SELECT titulo, categoria, DATE(dataPublicacao) AS 'data', email, username FROM topico 
+      JOIN usuario ON fk_usuario = idUsuario 
+    WHERE idTopico = ${idTopic};
+  `;
+
+  return database.executar(sqlInstruction);
+}
+
 module.exports = {
   postTopic,
   viewTopics,
   topUsersPosts,
+  openTopicPage,
 };

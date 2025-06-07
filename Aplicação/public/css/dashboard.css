@@ -100,9 +100,13 @@
 }
 .history-user-posts::-webkit-scrollbar-track {
   background: var(--branco);
+  border-radius: 20px;
+
 }
 .history-user-posts::-webkit-scrollbar-thumb {
   background: var(--marrom);
+  border-radius: 20px;
+
 }
 
  .history-post-data {

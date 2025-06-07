@@ -49,8 +49,22 @@ function topUsersPosts(req, res) {
     });
 }
 
+function opentTopicPage(req, res) {
+  const topicID = req.params.id;
+
+  forumModel
+    .openTopicPage(topicID)
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((error) => {
+      res.status(500).send("Não foi possível abrir os comentários", error);
+    });
+}
+
 module.exports = {
   postTopic,
   viewTopics,
   topUsersPosts,
+  opentTopicPage,
 };

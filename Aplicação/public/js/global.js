@@ -47,6 +47,9 @@ window.onload = () => {
 function logout() {
   sessionStorage.removeItem("userEmail");
   sessionStorage.removeItem("userName");
+  sessionStorage.removeItem("userTheme");
+  sessionStorage.removeItem("userID");
+  sessionStorage.removeItem("userBirthday");
 
   auth.forEach((element) => {
     element.style.display = "none";

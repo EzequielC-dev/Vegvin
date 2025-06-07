@@ -10,6 +10,11 @@ CREATE TABLE usuario (
     tipo VARCHAR(25),
     CONSTRAINT chk_tipo CHECK (tipo IN ('administrador', 'membro'))
 );
+select * from usuario;
+SELECT * FROM topico WHERE idTopico = 10;
+
+    SELECT * FROM topico;
+    SELECT * FROM usuario;
 ALTER TABLE usuario MODIFY COLUMN email VARCHAR(45) UNIQUE;
 
 SELECT * FROM usuario;
