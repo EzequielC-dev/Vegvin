@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vegvin - Fórum </title>
     <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/forum.css">
+    <link rel="stylesheet" href="./css/topic.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
@@ -65,8 +65,8 @@
         </article>
 
         <div class="principal-forum">
-            <div>
-                <p><a href="forum.html">- Voltar</a></p>
+            <div id="back-forum-page">
+                <p><a href="forum.html">🡰 Voltar</a></p>
             </div>
             <section id="topic">
 
@@ -75,8 +75,12 @@
 
             </section>
 
-            <div id="topic-add-comment">
+            <div class="topic-add-comment">
+                <h3>Adicionar comentário</h3>
+                <input type="text" id="input_comment">
+                <input type="file" id="input_file">
 
+                <button>Enviar</button>
             </div>
         </div>
     </main>

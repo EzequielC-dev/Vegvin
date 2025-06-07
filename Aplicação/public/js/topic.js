@@ -15,16 +15,21 @@ function openTopicPage() {
 
       if (result.ok) {
         result.json().then((topic) => {
-          console.log(topic);
           topicClicked.innerHTML = `
           
-          <div class="topic-comment-title">
-            <span>
-                <h1>${topic[0].titulo}</h1>
+          <section class="topic-comment-title">
+            <div class="topic-user">
+                <span>
+                    <img src="https://i.pinimg.com/736x/8e/cd/10/8ecd10ffbe03bf69eeebc2337037a71b.jpg">
+                    <p>${topic[0].username} (${topic[0].email})</p>
+                </span>
                 <p>${topic[0].data.substring(0, 10)}</p>
-            </span>
-
-          </div>
+            </div>
+            <div class="comment-info">
+                <p>${topic[0].categoria}</p>
+                <h1>${topic[0].titulo}</h1>
+            </div>
+          </section>
           
           `;
         });

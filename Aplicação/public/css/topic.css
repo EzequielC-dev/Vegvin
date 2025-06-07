@@ -1,0 +1,55 @@
+.topic-comment-title {
+    color: var(--marrom);
+    background-color: var(--amarelo-bg-comentario);
+    padding: 1rem;
+    border-radius: 8px 8px 0px 0px;
+
+    .comment-info {
+    padding-top: 1rem;
+    }
+}
+
+.topic-user {
+    display: flex;
+    gap: 60%;
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        img {
+            width: 6rem;
+            border-radius: 100%;
+        }
+    }
+}
+
+#back-forum-page {
+    padding-bottom: 2rem;
+
+    p {
+        display: flex;
+        justify-content: center;
+        
+        font-size: 1rem;
+        font-weight: bold;
+        background-color: var(--marrom);
+        width: 8vw;
+        border-radius: 8px;
+
+        a {
+            text-decoration: none;
+            color: var(--branco);
+            text-wrap: nowrap;
+            padding: 1rem;
+        }
+    }
+}
+
+.topic-add-comment {
+    background-color: var(--amarelo-bg-comentario);
+
+    color: var(--marrom);
+    padding: 1rem;
+}
