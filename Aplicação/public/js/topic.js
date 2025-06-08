@@ -123,52 +123,73 @@ function viewComments() {
 }
 
 function addComment() {
-  const commentInput = document.getElementById("input_comment").value;
-  const header = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      userID: sessionStorage.userID,
-      topicID: id,
-      comment: commentInput,
-    }),
-  };
+  if (
+    sessionStorage.userID == undefined ||
+    sessionStorage.username == undefined ||
+    sessionStorage.userEmail == undefined
+  ) {
+    Toastify({
+      text: "Erro: somente usuários cadastrados podem comentar!",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#EFB135",
+        color: "#361E05",
+      },
+    }).showToast();
+  } else {
+    const commentInput = document.getElementById("input_comment").value;
+    const header = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userID: sessionStorage.userID,
+        topicID: id,
+        comment: commentInput,
+      }),
+    };
 
-  fetch("http://localhost:3333/topic/addComment", header)
-    .then(() => {
-      Toastify({
-        text: "Comentário adicionado com sucesso",
-        duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "top",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-          background: "#EFB135",
-          color: "#361E05",
-        },
-      }).showToast();
-    })
-    .catch(() => {
-      Toastify({
-        text: "Erro: não foi possível adicionar comentário!",
-        duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "top",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-          background: "#EFB135",
-          color: "#361E05",
-        },
-      }).showToast();
-    });
+    fetch("http://localhost:3333/topic/addComment", header)
+      .then(() => {
+        Toastify({
+          text: "Comentário adicionado com sucesso",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "right",
+          stopOnFocus: true,
+          style: {
+            background: "#EFB135",
+            color: "#361E05",
+          },
+        }).showToast();
+      })
+      .catch(() => {
+        Toastify({
+          text: "Erro: não foi possível adicionar comentário!",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "right",
+          stopOnFocus: true,
+          style: {
+            background: "#EFB135",
+            color: "#361E05",
+          },
+        }).showToast();
+      });
+  }
 }
 
 window.addEventListener("DOMContentLoaded", openTopicPage);
