@@ -26,8 +26,17 @@ function addComment(comment, fkTopic, fkUser) {
   return database.executar(sqlInstruction);
 }
 
+function getCategories() {
+  const sqlInstruction = `
+    SELECT categoria, COUNT(*) AS 'quantidade' FROM topico GROUP BY categoria;
+  `;
+
+  return database.executar(sqlInstruction);
+}
+
 module.exports = {
   addComment,
   countAnswers,
   viewComments,
+  getCategories,
 };

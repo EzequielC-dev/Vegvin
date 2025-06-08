@@ -59,8 +59,20 @@ function addComment(req, res) {
   }
 }
 
+function getCategories(req, res) {
+  topicModel
+    .getCategories()
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((error) => {
+      console.log("Erro: não foi possível pegar as categorias", error);
+    });
+}
+
 module.exports = {
   addComment,
   viewComments,
   countAnswers,
+  getCategories,
 };

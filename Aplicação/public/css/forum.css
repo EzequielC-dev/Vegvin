@@ -1,9 +1,13 @@
-
 .principal-navegacao-forum {
     display: flex;
     align-items: center;
     gap: 3rem;
     padding-bottom: 2rem;
+    
+    a {
+        text-decoration: none;
+        color: var(--preto);
+    }
 }
 
 .principal-navegacao-forum button {

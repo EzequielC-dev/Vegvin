@@ -11,6 +11,10 @@ router.get("/countAnswers/:id", function (req, res) {
   topicController.countAnswers(req, res);
 });
 
+router.get("/getCategories", function (req, res) {
+  topicController.getCategories(req, res);
+});
+
 router.post("/addComment", function (req, res) {
   topicController.addComment(req, res);
 });
