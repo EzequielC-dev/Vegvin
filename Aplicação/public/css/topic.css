@@ -93,7 +93,7 @@
     padding: 1rem;
 
     color: var(--marrom);
-    background-color: var(--amarelo);
+    background-color: var(--amarelo-bg-comentario);
 
     span {
         display: flex;
