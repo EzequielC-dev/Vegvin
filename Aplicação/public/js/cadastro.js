@@ -1,5 +1,11 @@
 const buttonRegister = document.getElementById("cadastrar");
-buttonRegister.addEventListener("click", cadastrarUsuario);
+const nextButton = document.getElementById("next-button");
+const user = {
+  username: "",
+  email: "",
+  password: "",
+  birthday: "",
+};
 
 function cadastrarUsuario() {
   const username = document.getElementById("username").value;
@@ -101,3 +107,53 @@ function cadastrarUsuario() {
       });
   }
 }
+
+function uploadPart() {
+  user.username = document.getElementById("username").value;
+  user.email = document.getElementById("email").value;
+  user.password = document.getElementById("senha").value;
+  user.birthday = document.getElementById("data_nascimento").value;
+
+  const principalRegisterText = document.querySelector(
+    ".principal-cadastro-texto"
+  );
+
+  principalRegisterText.innerHTML = `
+                     <p>Foto de Perfil</p>
+                    <input type="file" id="photo">
+                    <button id="back-button">< Anterior</button>
+  
+  `;
+  const backButton = document.getElementById("back-button");
+  backButton.addEventListener("click", oldText);
+}
+
+function oldText() {
+  const userPhoto = document.getElementById("photo").value;
+  console.log(userPhoto);
+
+  const principalRegisterText = document.querySelector(
+    ".principal-cadastro-texto"
+  );
+
+  principalRegisterText.innerHTML = `
+                    <p>Username</p>
+                    <input type="text" id="username" placeholder="thorfinn" value="${user.username}">
+
+                    <p>Email</p>
+                    <input type="text" id="email" placeholder="einar@gmail.com" value="${user.email}">
+
+                    <p>Senha</p>
+                    <input type="password" id="senha" placeholder="thorfinn123" value="${user.password}">
+
+                    <p>Data de nascimento</p>
+                    <input type="date" id="data_nascimento" value="${user.birthday}">
+
+                    <button id="next-button">Próximo ></button>`;
+
+  const nextButton = document.getElementById("next-button");
+  nextButton.addEventListener("click", uploadPart);
+}
+
+buttonRegister.addEventListener("click", cadastrarUsuario);
+nextButton.addEventListener("click", uploadPart);
