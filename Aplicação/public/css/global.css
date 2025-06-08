@@ -56,7 +56,7 @@ body.dark {
     align-items: center;
     padding-right: 20px;
 
-    animation: headerDown 0.5s;
+    animation: headerDown 0.3s;
 }
 
 @keyframes headerDown {
@@ -91,13 +91,27 @@ body.dark {
 
 .cabecalho-navegacao button a {
     text-decoration: none;
-    color: var(--amarelo);
     font-weight: bold;
 }
 
 .normal-button {
     background-color: var(--preto);
+    box-shadow: 3px 3px 3px 2px var(--cinza); 
+
+    a {
+        color: var(--amarelo);
+        padding: 1rem 3rem 1rem 2rem;
+    }
+}
+
+.normal-button-auth {
+    background-color: var(--amarelo);
     box-shadow: 3px 3px 3px 2px var(--cinza);
+
+    a {
+        color: var(--preto);
+        padding: 1rem;
+    }
 }
 
 .normal-button:hover {
@@ -109,11 +123,16 @@ body.dark {
     transition-duration: 1s;
 }
 
-.normal-button a, 
+.normal-button-auth:hover {
+    background-color: var(--amarelo-bg-comentario);
+    transition-duration: 1s;
+}
+
 #login a {
     padding: 12%;
     width: 100%;
     color: var(--preto);
+    padding: 1rem 3rem 1rem 3rem;
 }
 
 .button-image {
