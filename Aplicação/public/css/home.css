@@ -264,3 +264,7 @@
     border: 0;
     padding: 0;
 }
+
+#send-email {
+    cursor: pointer;
+}

@@ -1,5 +1,4 @@
 const buttonLogin = document.getElementById("login");
-
 buttonLogin.addEventListener("click", loginUsuario);
 
 function loginUsuario() {

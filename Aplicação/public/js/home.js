@@ -6,6 +6,15 @@ const dateComplete = {
   month: new Date().getMonth() + 1,
   year: new Date().getFullYear(),
 };
+const sendEmailButton = document.getElementById("send-email");
+
+if (
+  sessionStorage.userEmail != undefined &&
+  sessionStorage.userName != undefined
+) {
+  const username = sessionStorage.getItem("userName");
+  containerName.innerHTML = username;
+}
 
 function historia() {
   principalPrevia.innerHTML = `<div>
@@ -195,12 +204,74 @@ function vegvin() {
     `;
 }
 
-if (
-  sessionStorage.userEmail != undefined &&
-  sessionStorage.userName != undefined
-) {
-  const username = sessionStorage.getItem("userName");
-  containerName.innerHTML = username;
+function sendEmail() {
+  const email = document.getElementById("user-email").value;
+  const subject = document.getElementById("user-subject").value;
+
+  if (email == "" || subject == "") {
+    Toastify({
+      text: "Erro: por favor, preencha as informações necessárias!",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#000",
+        color: "#EFB135",
+      },
+    }).showToast();
+  } else {
+    const header = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailUser: email,
+        text: subject,
+      }),
+    };
+
+    fetch("http://localhost:3333/sendEmail", header)
+      .then((response) => {
+        if (response.ok) {
+          Toastify({
+            text: "Email enviado com sucesso!",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "#000",
+              color: "#EFB135",
+            },
+          }).showToast();
+        }
+      })
+      .catch(() => {
+        Toastify({
+          text: "Erro: não foi possível enviar o e-mail!",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "right",
+          stopOnFocus: true,
+          style: {
+            background: "#000",
+            color: "#EFB135",
+          },
+        }).showToast();
+      });
+  }
 }
 
 todayDate.innerHTML = `${dateComplete.day}/${dateComplete.month}/${dateComplete.year}`;
+sendEmailButton.addEventListener("click", sendEmail);
