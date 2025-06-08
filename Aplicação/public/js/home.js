@@ -8,12 +8,48 @@ const dateComplete = {
 };
 const sendEmailButton = document.getElementById("send-email");
 
-if (
-  sessionStorage.userEmail != undefined &&
-  sessionStorage.userName != undefined
-) {
-  const username = sessionStorage.getItem("userName");
-  containerName.innerHTML = username;
+function verifyUserName() {
+  if (
+    sessionStorage.userEmail != undefined &&
+    sessionStorage.userName != undefined
+  ) {
+    const username = sessionStorage.getItem("userName");
+    containerName.innerHTML = username;
+  }
+}
+
+function incrementTitle() {
+  const title = document.getElementById("principal-title");
+  const text = [
+    "V",
+    "e",
+    "g",
+    "V",
+    "i",
+    "n",
+    ":",
+    " ",
+    "V",
+    "i",
+    "n",
+    "l",
+    "a",
+    "n",
+    "d",
+    " ",
+    "F",
+    "ó",
+    "r",
+    "u",
+    "m",
+  ];
+
+  for (let i = 0; i < text.length; i++) {
+    setTimeout(() => {
+      const currentPosition = text[i];
+      title.innerHTML += currentPosition;
+    }, i * 150);
+  }
 }
 
 function historia() {
@@ -58,7 +94,7 @@ function historia() {
                         sobre liberdade, redenção e o verdadeiro significado da força.
                     </p>
 
-                    <button>VER MAIS</button>
+                    <button><a href="historia.html">VER MAIS</a></button>
                 </div>
             </div>
 
@@ -99,7 +135,7 @@ function personagem() {
                         ambígua: às vezes você o vê como vilão, outras vezes quase como um mentor.
                     </p>
 
-                    <button>VER MAIS</button>
+                    <button><a href="personagens.html">VER MAIS</a></button>
                 </div>
             </div>
 
@@ -139,7 +175,7 @@ function forum() {
                         notícias relacionadas, além de recomendar obras semelhantes.
                     </p>
 
-                    <button>VER MAIS</button>
+                    <button><a href="forum.html">VER MAIS</a></button>
                 </div>
             </div>
 
@@ -168,11 +204,10 @@ function vegvin() {
 
                 <div class="principal-previa-texto">
                     <h2>Vegvin</h2>
-                    <p>Este projeto, foi feito com o intuito de tentar fazer as pessoas serem melhores. Eu, pessoalmente
-                        acredito que pessoas podem mudar, pessoas podem se tornar melhores. Algo mal pode virar algo
-                        bom, onde existe raiva pode existir amor.
-                        Thorfinn é um exemplo de arrependimento e redenção, e este projeto busca justamente isso, que
-                        pessoas possam rever suas atitudes e pensar um pouco.
+                    <p>Este projeto, foi feito com o intuito de tentar fazer as pessoas serem melhores. Esse anime,
+                        teve um impacto profundo na minha vida e na forma como eu penso as coisas, ele me ajudou em uma
+                        época em que eu estava muito pra baixo e me fez querer ser uma pessoa mais gentil, agora esse
+                        projeto busca fazer com que as pessoas possam ser mais gentis também.
                     </p>
                     <p>
                         Thorfinn: <i>"Eu me pergunto, pessoas podem realmente mudar? O que precisa se fazer pra mudar?
@@ -275,3 +310,5 @@ function sendEmail() {
 
 todayDate.innerHTML = `${dateComplete.day}/${dateComplete.month}/${dateComplete.year}`;
 sendEmailButton.addEventListener("click", sendEmail);
+window.addEventListener("DOMContentLoaded", verifyUserName);
+window.addEventListener("DOMContentLoaded", incrementTitle);

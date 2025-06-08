@@ -55,6 +55,17 @@ body.dark {
     justify-content: space-between;
     align-items: center;
     padding-right: 20px;
+
+    animation: headerDown 0.5s;
+}
+
+@keyframes headerDown {
+    from {
+        transform: translateY(-10rem);
+    }
+    to {
+        transform: translateY(0rem);
+    }
 }
 
 .cabecalho img {
@@ -80,18 +91,29 @@ body.dark {
 
 .cabecalho-navegacao button a {
     text-decoration: none;
-    color: #000000;
+    color: var(--amarelo);
     font-weight: bold;
 }
 
 .normal-button {
+    background-color: var(--preto);
+    box-shadow: 3px 3px 3px 2px var(--cinza);
+}
+
+.normal-button:hover {
     background-color: var(--amarelo);
+    a {
+        color: var(--preto);
+    }
+
+    transition-duration: 1s;
 }
 
 .normal-button a, 
 #login a {
     padding: 12%;
     width: 100%;
+    color: var(--preto);
 }
 
 .button-image {
@@ -110,6 +132,18 @@ body.dark {
 #login {
     background-color: #FFF;
     border: 4px solid var(--amarelo);
+
+    box-shadow: 3px 3px 3px 2px var(--cinza);
+}
+
+#login:hover {
+    border: 0px;
+    background-color: var(--amarelo);
+    transition-duration: 1.3s;
+
+    a {
+        color: var(--preto);
+    }
 }
 
 .principal {

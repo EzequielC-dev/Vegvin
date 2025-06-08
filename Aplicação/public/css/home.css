@@ -1,270 +1,280 @@
 .principal-vegvin {
-    display: flex;
-    gap: 1.875rem;
+  display: flex;
+  gap: 1.875rem;
 
-    width: 100%;
+  width: 100%;
 }
 
 .principal-vinland-forum {
-    background-color: var(--amarelo);
-    border-radius: 8px;
-    width: 59vw;
-    padding: 1.25rem;
-    margin-bottom: 1.875rem;
+  background-color: var(--amarelo);
+  border-radius: 8px;
+  width: 59vw;
+  padding: 1.25rem;
+  margin-bottom: 1.875rem;
+  text-align: center;
 }
 
 .principal-vinland-forum img {
-    width: 100%;
-    height: 10rem;
-    object-fit: cover;
-    border-radius: 8px;
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .principal-vinland-forum h1 {
-    padding-bottom: 10px;
+    padding: 0.4rem;
 }
 
 .principal-sinopse {
-    background-color: var(--amarelo);
-    padding: 1.25rem;
-    width: 59vw;
-    border-radius: 8px;
-}
-
-.principal-sinopse-imagens {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 2rem;
-    padding-bottom: 1rem;
+  background-color: var(--amarelo);
+  padding: 1.25rem;
+  width: 59vw;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .principal-sinopse-imagens img {
-    width: 3.125rem;
+  width: 3.125rem;
 }
 
 #principal-sinopse-logo {
-    width: 15.6rem;
-    padding-left: 6.25rem;
-    padding-right: 7.5;
-    padding-bottom: 1.875rem;
+  width: 15.6rem;
+  padding-left: 1vw;
+  padding-right: 7.5;
+  padding-bottom: 1.875rem;
 }
 
 .principal-imagem {
-    display: flex;
-    width: 40vw;
+  display: flex;
+  width: 40vw;
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .principal-imagem img {
-    height: 30rem;
-    object-fit: contain;
+  height: 30rem;
+  object-fit: contain;
 }
 
 .principal-imagem::before {
-    content: "";
-    display: block;
-    background-color: var(--amarelo);
-    width: 1.3rem;
-    height: 25rem;
-    border-radius: 40px;
+  content: "";
+  display: block;
+  background-color: var(--amarelo);
+  width: 1.3rem;
+  height: 25rem;
+  border-radius: 40px;
 }
 
 .principal-previa {
-    color: var(--marrom);
+  color: var(--marrom);
 }
 
 .principal-previa {
-    display: flex;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    gap: 110px;
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  gap: 110px;
 }
 
 .principal-previa-navegacao {
-    display: flex;
-    gap: 50px;
-    padding-bottom: 30px;
+  display: flex;
+  gap: 50px;
+  padding-bottom: 30px;
 
-    width: 50vw;
+  width: 50vw;
 }
 
 .principal-previa-navegacao button {
-    text-decoration: none;
-    padding-bottom: 5px;
-    cursor: pointer;
+  text-decoration: none;
+  padding-bottom: 5px;
+  cursor: pointer;
 
-    font-size: 16px;
-    font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
 
-    background-color: var(--branco);
-    color: var(--marrom);
+  background-color: var(--branco);
+  color: var(--marrom);
 }
 
 .principal-previa-imagem img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .principal-previa-texto {
-    width: 50vw
+  width: 50vw;
 }
 
 .principal-previa-texto h2 {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .principal-previa-texto p {
-    padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .principal-previa-texto p i {
-    padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .principal-previa-texto button {
-    width: 200px;
-    padding: 20px;
-    border-radius: 4px;
-    background-color: var(--amarelo);
-    font-weight: bold;
-}
+  width: 200px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: var(--amarelo);
+  font-weight: bold;
 
-.principal-fale-conosco {
-    display: flex;
-    color: var(--preto);
-}
-
-.fale-conosco-inputs {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    background-color: var(--amarelo);
-    color: var(--marrom);
-    font-weight: bold;
-
-    width: 100%;
-}
-
-.fale-conosco-inputs h1 {
-    padding-bottom: 20px;
-}
-
-.fale-conosco-inputs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.fale-conosco-inputs .fale-conosco-enviar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    width: 80%;
-}
-
-.fale-conosco-inputs div input {
-    padding: 18px;
-    border-radius: 4px;
-    margin-bottom: 30px;
-}
-
-#assunto {
-    margin-bottom: 30px;
-    height: 150px;
-}
-
-.fale-conosco-inputs button {
-    margin: 0 auto;
-    width: 250px;
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 4px;
-    background-color: var(--preto);
-    color: var(--amarelo);
-}
-
-.fale-conosco-redes {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-    padding-right: 30px;
-
-    width: 100%;
-}
-
-.fale-conosco-redes img {
-    display: flex;
-    width: 40px;
-
-    cursor: pointer;
-}
-
-.principal-vinland-content {
-    padding-top: 1rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.principal-vinland-user {
-    background-color: var(--amarelo-bg-comentario);
-    padding: 1rem;
-
-    width: 75%;
-
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.principal-vinland-image img {
-    border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
-    object-fit: cover;
-}
-
-.principal-vinland-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.principal-vinland-buttons button {
-    background-color: #000;
-
-    padding: 1rem;
-    height: 100%;
-
-    border-radius: 8px;
-    gap: 0.6rem;
-
-    cursor: pointer;
-
-    a {
+   a{
         text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+        color: var(--preto);
+        padding: 1rem 3.3rem 1rem 3.3rem;
 
-        color: var(--amarelo);
+        text-wrap: nowrap;
     }
 }
 
-.principal-vinland-buttons button img {
-    width: 1.4rem;
-    height: 1.4rem;
+.principal-previa-texto button:hover {
+    background-color: var(--preto);
+    a {
+        color: var(--amarelo);
+    }
 
-    border: 0;
-    padding: 0;
+    transition-duration: 1.25s;
+}
+
+.principal-fale-conosco {
+  display: flex;
+  color: var(--preto);
+}
+
+.fale-conosco-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: var(--amarelo);
+  color: var(--marrom);
+  font-weight: bold;
+
+  width: 100%;
+}
+
+.fale-conosco-inputs h1 {
+  padding-bottom: 20px;
+}
+
+.fale-conosco-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fale-conosco-inputs .fale-conosco-enviar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 80%;
+}
+
+.fale-conosco-inputs div input {
+  padding: 18px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+#assunto {
+  margin-bottom: 30px;
+  height: 150px;
+}
+
+.fale-conosco-inputs button {
+  margin: 0 auto;
+  width: 250px;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 4px;
+  background-color: var(--preto);
+  color: var(--amarelo);
+}
+
+.fale-conosco-redes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-right: 30px;
+
+  width: 100%;
+}
+
+.fale-conosco-redes img {
+  display: flex;
+  width: 40px;
+
+  cursor: pointer;
+}
+
+.principal-vinland-content {
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.principal-vinland-user {
+  background-color: var(--amarelo-bg-comentario);
+  padding: 1rem;
+
+  width: 75%;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.principal-vinland-image img {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+}
+
+.principal-vinland-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.principal-vinland-buttons button {
+  background-color: #000;
+
+  padding: 1rem;
+  height: 100%;
+
+  border-radius: 8px;
+  gap: 0.6rem;
+
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    color: var(--amarelo);
+  }
+}
+
+.principal-vinland-buttons button img {
+  width: 1.4rem;
+  height: 1.4rem;
+
+  border: 0;
+  padding: 0;
 }
 
 #send-email {
-    cursor: pointer;
+  cursor: pointer;
 }
