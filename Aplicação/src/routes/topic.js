@@ -7,6 +7,10 @@ router.get("/viewComments/:id", function (req, res) {
   topicController.viewComments(req, res);
 });
 
+router.get("/countAnswers/:id", function (req, res) {
+  topicController.countAnswers(req, res);
+});
+
 router.post("/addComment", function (req, res) {
   topicController.addComment(req, res);
 });

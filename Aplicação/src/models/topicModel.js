@@ -9,6 +9,14 @@ function viewComments(idTopic) {
   return database.executar(sqlInstruction);
 }
 
+function countAnswers(idTopic) {
+  const sqlInstruction = `
+    SELECT COUNT(*) AS 'respostas' FROM comentario WHERE fk_topicos = ${idTopic};
+  `;
+
+  return database.executar(sqlInstruction);
+}
+
 function addComment(comment, fkTopic, fkUser) {
   const sqlInstruction = `
     INSERT INTO comentario(comentarioTexto, fk_topicos, fk_usuario) VALUES 
@@ -20,5 +28,6 @@ function addComment(comment, fkTopic, fkUser) {
 
 module.exports = {
   addComment,
+  countAnswers,
   viewComments,
 };

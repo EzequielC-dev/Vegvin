@@ -12,7 +12,24 @@ function viewComments(req, res) {
         res.status(200).json(result);
       })
       .catch((error) => {
-        console.log("Não foi possível pegar os comentários", error);
+        console.log("Erro: não foi possível pegar os comentários", error);
+      });
+  }
+}
+
+function countAnswers(req, res) {
+  const id = req.params.id;
+
+  if (id == undefined) {
+    res.status(500).send("O ID do tópcio está como indefinido!");
+  } else {
+    topicModel
+      .countAnswers(id)
+      .then((result) => {
+        res.status(200).json(result);
+      })
+      .catch((error) => {
+        console.log("Erro: não foi possível contar os comentários", error);
       });
   }
 }
@@ -45,4 +62,5 @@ function addComment(req, res) {
 module.exports = {
   addComment,
   viewComments,
+  countAnswers,
 };

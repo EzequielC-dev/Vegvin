@@ -111,3 +111,25 @@
 .principal-forum {
     border-radius: 8px;
 }
+
+.comment-info {
+    #comment-title-quantity {
+        display: flex;
+        align-items: center;
+        gap: 5vw;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-weight: bold;
+        img {
+            width: 2rem;
+        }
+
+        #answers-quantity {
+            padding-left: 1%;
+        }
+    }
+}

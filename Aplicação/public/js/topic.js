@@ -28,7 +28,14 @@ function openTopicPage() {
             </div>
             <div class="comment-info">
                 <p>Categoria: ${topic[0].categoria}</p>
-                <h1>${topic[0].titulo}</h1>
+                <div id="comment-title-quantity">
+                  <h1>${topic[0].titulo}</h1>
+
+                  <span>
+                    <img src="./assets/icons/icon-comment.svg" alt="Icon Comment">
+                    <p id="answers-quantity"><p>
+                  </span>
+                </div>
             </div>
           </section>
           
@@ -38,6 +45,34 @@ function openTopicPage() {
     })
     .catch((error) => {
       console.log("Erro: Não foi possível fazer a requisição", error);
+    });
+}
+
+function countAnswers() {
+  fetch(`http://localhost:3333/topic/countAnswers/${id}`)
+    .then((result) => {
+      if (result.ok) {
+        result.json().then((json) => {
+          const paragraph = document.getElementById("answers-quantity");
+          paragraph.innerHTML = `${json[0].respostas}`;
+        });
+      }
+    })
+    .catch((error) => {
+      Toastify({
+        text: "Erro: não foi possível contar os comentários!",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "#EFB135",
+          color: "#361E05",
+        },
+      }).showToast();
     });
 }
 
@@ -55,7 +90,6 @@ function viewComments() {
         const sectionComments = document.getElementById("topic-comments");
         result.json().then((comments) => {
           comments.forEach((comment) => {
-            console.log(comment);
             sectionComments.innerHTML += `
               <div class="user-comment">
                     <span>
@@ -70,8 +104,21 @@ function viewComments() {
         });
       }
     })
-    .catch((error) => {
-      console.log("Dando errado");
+    .catch(() => {
+      Toastify({
+        text: "Erro: não foi possível ver os comentários!",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "#EFB135",
+          color: "#361E05",
+        },
+      }).showToast();
     });
 }
 
@@ -125,5 +172,6 @@ function addComment() {
 }
 
 window.addEventListener("DOMContentLoaded", openTopicPage);
+window.addEventListener("DOMContentLoaded", countAnswers);
 window.addEventListener("DOMContentLoaded", viewComments);
 buttonAddComment.addEventListener("click", addComment);
