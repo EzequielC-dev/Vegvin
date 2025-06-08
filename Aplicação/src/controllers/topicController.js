@@ -1,5 +1,22 @@
 const topicModel = require("../models/topicModel");
 
+function viewComments(req, res) {
+  const id = req.params.id;
+
+  if (id == "undefined") {
+    res.status(500).send("O ID do tópico está como indefinido!");
+  } else {
+    topicModel
+      .viewComments(id)
+      .then((result) => {
+        res.status(200).json(result);
+      })
+      .catch((error) => {
+        console.log("Não foi possível pegar os comentários", error);
+      });
+  }
+}
+
 function addComment(req, res) {
   const fkUser = req.body.userID;
   const fkTopic = req.body.topicID;
@@ -27,4 +44,5 @@ function addComment(req, res) {
 
 module.exports = {
   addComment,
+  viewComments,
 };

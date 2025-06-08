@@ -27,7 +27,7 @@ function openTopicPage() {
                 <p>${topic[0].data.substring(0, 10)}</p>
             </div>
             <div class="comment-info">
-                <p>${topic[0].categoria}</p>
+                <p>Categoria: ${topic[0].categoria}</p>
                 <h1>${topic[0].titulo}</h1>
             </div>
           </section>
@@ -42,7 +42,37 @@ function openTopicPage() {
 }
 
 function viewComments() {
-  fetch(`http://localhost:3333/topic/viewComments/${id}`);
+  const header = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch(`http://localhost:3333/topic/viewComments/${id}`, header)
+    .then((result) => {
+      if (result.ok) {
+        const sectionComments = document.getElementById("topic-comments");
+        result.json().then((comments) => {
+          comments.forEach((comment) => {
+            console.log(comment);
+            sectionComments.innerHTML += `
+              <div class="user-comment">
+                    <span>
+                        <img src="https://i.pinimg.com/736x/52/8e/d1/528ed1cb613d532d915e7f06c709f513.jpg"
+                            alt="Icon Thorfinn">
+                        <p>${comment.username} (${comment.email})</p>
+                    </span>
+                    <p>${comment.comentarioTexto}</p>
+                </div>
+            `;
+          });
+        });
+      }
+    })
+    .catch((error) => {
+      console.log("Dando errado");
+    });
 }
 
 function addComment() {
@@ -95,4 +125,5 @@ function addComment() {
 }
 
 window.addEventListener("DOMContentLoaded", openTopicPage);
+window.addEventListener("DOMContentLoaded", viewComments);
 buttonAddComment.addEventListener("click", addComment);
