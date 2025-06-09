@@ -104,7 +104,10 @@
 
     img {
         width: 4rem;
+        height: 4rem;
         border-radius: 70%;
+
+        object-fit: cover;
     }
 }
 

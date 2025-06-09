@@ -2,7 +2,7 @@ const database = require("../database/config");
 
 function viewComments(idTopic) {
   const sqlInstruction = `
-    SELECT comentarioTexto, username, email FROM comentario 
+    SELECT comentarioTexto, username, email, imagemPerfil AS 'imagem' FROM comentario 
       JOIN usuario ON fk_usuario = idUsuario 
     WHERE fk_topicos = ${idTopic} ORDER BY idComentario DESC;`;
 

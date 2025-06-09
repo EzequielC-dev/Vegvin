@@ -16,6 +16,7 @@ function openTopicPage() {
 
       if (result.ok) {
         result.json().then((topic) => {
+          console.log(topic);
           topicClicked.innerHTML = `
           <section class="topic-comment-title">
             <div class="topic-user">
@@ -53,7 +54,12 @@ function countAnswers() {
       if (result.ok) {
         result.json().then((json) => {
           const paragraph = document.getElementById("answers-quantity");
-          paragraph.innerHTML = `${json[0].respostas}`;
+
+          if (json[0].lenght == 0) {
+            paragraph.innerHTML = "0";
+          } else {
+            paragraph.innerHTML = `${json[0].respostas}`;
+          }
         });
       }
     })
@@ -89,11 +95,12 @@ function viewComments() {
         const sectionComments = document.getElementById("topic-comments");
         result.json().then((comments) => {
           comments.forEach((comment) => {
+            console.log(comment);
             sectionComments.innerHTML += `
               <div class="user-comment">
                     <span>
-                        <img src="https://i.pinimg.com/736x/52/8e/d1/528ed1cb613d532d915e7f06c709f513.jpg"
-                            alt="Icon Thorfinn">
+                        <img src="/assets/users-images/${comment.imagem}"
+                            alt="Icon User Image">
                         <p>${comment.username} (${comment.email})</p>
                     </span>
                     <p>${comment.comentarioTexto}</p>
@@ -124,7 +131,7 @@ function viewComments() {
 function addComment() {
   if (
     sessionStorage.userID == undefined ||
-    sessionStorage.username == undefined ||
+    sessionStorage.userName == undefined ||
     sessionStorage.userEmail == undefined
   ) {
     Toastify({
