@@ -10,6 +10,43 @@ user.innerHTML = sessionStorage.userName;
 email.innerHTML = sessionStorage.userEmail;
 birthday.innerHTML = userBirthday.substring(0, 10);
 
+function getUserImage() {
+  const id = sessionStorage.userID;
+  const userImage = document.getElementById("user-image");
+  const header = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch(`http://localhost:3333/getUserImage/${id}`, header)
+    .then((result) => {
+      result.json().then((photo) => {
+        userImage.setAttribute(
+          "src",
+          `./assets/users-images/${photo[0].imagem}`
+        );
+      });
+    })
+    .catch((error) => {
+      Toastify({
+        text: "Erro: não foi possível pegar a foto do usuário",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "#000",
+          color: "#EFB135",
+        },
+      }).showToast();
+    });
+}
+
 function totalPosts() {
   const totalPosts = document.getElementById("user-totalPosts");
 
@@ -210,3 +247,4 @@ window.addEventListener("DOMContentLoaded", mostUsedCategory);
 window.addEventListener("DOMContentLoaded", historyPosts);
 window.addEventListener("DOMContentLoaded", viewCategoriesDashboard);
 window.addEventListener("DOMContentLoaded", viewWeeklyPosts);
+window.addEventListener("DOMContentLoaded", getUserImage);

@@ -322,7 +322,6 @@ function userImage() {
   fetch(`http://localhost:3333/getUserImage/${id}`, header)
     .then((result) => {
       result.json().then((photo) => {
-        console.log(photo);
         userImage.setAttribute(
           "src",
           `./assets/users-images/${photo[0].imagem}`
