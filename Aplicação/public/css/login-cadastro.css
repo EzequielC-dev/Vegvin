@@ -148,3 +148,28 @@
 .second-part {
     display: none;
 }
+
+#photo {
+    display: none;
+}
+
+#label-photo {
+    --amarelo-bg-comentario: #f2c05dab;
+    height: 120%;
+    background-color: var(--amarelo-bg-comentario);
+
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px dashed var(--amarelo-bg-ativo);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 10.5rem;
+        height: 10rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}

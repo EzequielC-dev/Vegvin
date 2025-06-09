@@ -115,7 +115,7 @@ function cadastrarUsuario() {
         color: "#361E05",
       },
     }).showToast();
-  } else if (photo.files.length === 0) {
+  } else if (photo.files[0].length === 0) {
     Toastify({
       text: "Erro: Por favor, insira uma foto de perfil!",
       duration: 3000,
