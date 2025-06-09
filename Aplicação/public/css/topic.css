@@ -24,7 +24,10 @@
 
         img {
             width: 6rem;
+            height: 6rem;
             border-radius: 100%;
+
+            object-fit: cover;
         }
     }
 }
