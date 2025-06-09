@@ -28,7 +28,7 @@ function topUsersPosts() {
 
 function openTopicPage(idTopic) {
   const sqlInstruction = `
-    SELECT titulo, categoria, DATE(dataPublicacao) AS 'data', email, username FROM topico 
+    SELECT titulo, categoria, DATE(dataPublicacao) AS 'data', email, username, imagemPerfil AS 'imagem' FROM topico 
       JOIN usuario ON fk_usuario = idUsuario 
     WHERE idTopico = ${idTopic};
   `;

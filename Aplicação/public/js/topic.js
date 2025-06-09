@@ -17,11 +17,10 @@ function openTopicPage() {
       if (result.ok) {
         result.json().then((topic) => {
           topicClicked.innerHTML = `
-          
           <section class="topic-comment-title">
             <div class="topic-user">
                 <span>
-                    <img src="https://i.pinimg.com/736x/8e/cd/10/8ecd10ffbe03bf69eeebc2337037a71b.jpg">
+                    <img src="./assets/users-images/${topic[0].imagem}">
                     <p>${topic[0].username} (${topic[0].email})</p>
                 </span>
                 <p>${topic[0].data.substring(0, 10)}</p>
