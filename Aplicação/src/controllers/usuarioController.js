@@ -1,4 +1,5 @@
 const usuarioModel = require("../models/usuarioModel");
+const { get } = require("../routes");
 
 function login(req, res) {
   const email = req.body.email;
@@ -33,8 +34,8 @@ function login(req, res) {
 function cadastrar(req, res) {
   const nome = req.body.username;
   const email = req.body.email;
-  const senha = req.body.senha;
-  const dtNasc = req.body.data_nascimento;
+  const senha = req.body.password;
+  const dtNasc = req.body.birthday;
   const image = req.file.filename;
 
   if (nome == undefined) {
@@ -55,8 +56,8 @@ function cadastrar(req, res) {
         } else if (resultado.length == 0) {
           usuarioModel
             .cadastrar(nome, email, senha, dtNasc, image)
-            .then(function (resultado) {
-              res.json(resultado);
+            .then((result) => {
+              res.status(200).json(result);
             })
             .catch(function (erro) {
               console.log(erro);

@@ -308,7 +308,22 @@ function sendEmail() {
   }
 }
 
+function userImage() {
+  const userImage = document.getElementById("user-image");
+  const userId = sessionStorage.userID;
+
+  fetch(`http://localhost:3333/getUserImage/${userId}`)
+    .then((result) => {
+      result.json().then((photo) => {
+        console.log(photo);
+        // userImage.setAttribute("src", `${photo}`);
+      });
+    })
+    .catch((error) => {});
+}
+
 todayDate.innerHTML = `${dateComplete.day}/${dateComplete.month}/${dateComplete.year}`;
 sendEmailButton.addEventListener("click", sendEmail);
 window.addEventListener("DOMContentLoaded", verifyUserName);
 window.addEventListener("DOMContentLoaded", incrementTitle);
+window.addEventListener("DOMContentLoaded", userImage);

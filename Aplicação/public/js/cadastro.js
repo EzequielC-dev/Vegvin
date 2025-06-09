@@ -140,9 +140,6 @@ function cadastrarUsuario() {
 
     const header = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: formData,
     };
 

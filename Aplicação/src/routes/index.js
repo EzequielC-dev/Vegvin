@@ -11,4 +11,8 @@ router.post("/sendEmail", function (req, res) {
   homeController.sendEmail(req, res);
 });
 
+router.get("/getUserImage:id", function (req, res) {
+  homeController.getUserPhoto(req, res);
+});
+
 module.exports = router;

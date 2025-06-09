@@ -8,7 +8,6 @@ router.post("/cadastrar", upload.single("photo"), (req, res) => {
   usuarioController.cadastrar(req, res);
 });
 
-
 router.post("/login", (req, res) => {
   usuarioController.login(req, res);
 });
