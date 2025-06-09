@@ -144,3 +144,7 @@
 .menu-ativo {
     width: 300px;
 }
+
+.second-part {
+    display: none;
+}

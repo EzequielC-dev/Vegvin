@@ -1,5 +1,6 @@
 const buttonRegister = document.getElementById("cadastrar");
 const nextButton = document.getElementById("next-button");
+const backButton = document.getElementById("back-button");
 const user = {
   username: "",
   email: "",
@@ -8,13 +9,27 @@ const user = {
 };
 
 function cadastrarUsuario() {
-  const username = document.getElementById("username").value;
-  const email = document.getElementById("email").value;
-  const senha = document.getElementById("senha").value;
-  const dtNasc = document.getElementById("data_nascimento").value;
+  const username = user.username;
+  const email = user.email;
+  const senha = user.password;
+  const dtNasc = user.birthday;
+  const photo = document.getElementById("photo");
 
   if (username.includes(" ")) {
-    alert("Erro: Espaços não são permitidos no Username!");
+    Toastify({
+      text: "Erro: Espaços não são permitidos no Username!",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#EFB135",
+        color: "#361E05",
+      },
+    }).showToast();
   } else if (
     username.includes("@") ||
     username.includes("#") ||
@@ -24,31 +39,111 @@ function cadastrarUsuario() {
     username.includes("*") ||
     username.includes("!")
   ) {
-    alert("Erro: Caracteres especiais não são permitidos no Username!");
+    Toastify({
+      text: "Erro: Caracteres especiais não são permitidos no Username!",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#EFB135",
+        color: "#361E05",
+      },
+    }).showToast();
   } else if (!email.includes("@")) {
-    alert("Erro: Por favor, coloque '@' no seu email!");
+    Toastify({
+      text: "Erro: Por favor, coloque '@' no seu email!",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#EFB135",
+        color: "#361E05",
+      },
+    }).showToast();
   } else if (!email.endsWith(".com")) {
-    alert(
-      "Erro: Por favor, termine seu e-mail com finais válidos! Só aceitamos finais com: .com"
-    );
+    Toastify({
+      text: "Erro: Por favor, termine seu e-mail com finais válidos! Só aceitamos finais com: .com",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#EFB135",
+        color: "#361E05",
+      },
+    }).showToast();
   } else if (senha.length > 30 || senha.length < 4) {
     alert(
-      "Erro: Por favor, digite uma senha mais segura ou com menos de 30 caracteres"
+      Toastify({
+        text: "Erro: Por favor, digite uma senha mais segura ou com menos de 30 caracteres!",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "#EFB135",
+          color: "#361E05",
+        },
+      }).showToast()
     );
   } else if (dtNasc == "") {
-    alert("Erro: Por favor, coloque uma data de nascimento!");
+    Toastify({
+      text: "Erro: Por favor, coloque uma data de nascimento!",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#EFB135",
+        color: "#361E05",
+      },
+    }).showToast();
+  } else if (photo.files.length === 0) {
+    Toastify({
+      text: "Erro: Por favor, insira uma foto de perfil!",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#EFB135",
+        color: "#361E05",
+      },
+    }).showToast();
   } else {
+    const formData = new FormData();
+    formData.append("photo", photo.files[0]);
+    formData.append("username", username);
+    formData.append("email", email);
+    formData.append("password", senha);
+    formData.append("birthday", dtNasc);
+
     const header = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        username: username,
-        email: email,
-        senha: senha,
-        data_nascimento: dtNasc,
-      }),
+      body: formData,
     };
 
     fetch("/usuarios/cadastrar", header)
@@ -114,46 +209,22 @@ function uploadPart() {
   user.password = document.getElementById("senha").value;
   user.birthday = document.getElementById("data_nascimento").value;
 
-  const principalRegisterText = document.querySelector(
-    ".principal-cadastro-texto"
-  );
+  const firstPart = document.querySelector(".first-part");
+  const secondPart = document.querySelector(".second-part");
+  firstPart.style.display = "none";
+  secondPart.style.display = "flex";
 
-  principalRegisterText.innerHTML = `
-                     <p>Foto de Perfil</p>
-                    <input type="file" id="photo">
-                    <button id="back-button">< Anterior</button>
-  
-  `;
   const backButton = document.getElementById("back-button");
   backButton.addEventListener("click", oldText);
 }
 
 function oldText() {
-  const userPhoto = document.getElementById("photo").value;
-  console.log(userPhoto);
-
-  const principalRegisterText = document.querySelector(
-    ".principal-cadastro-texto"
-  );
-
-  principalRegisterText.innerHTML = `
-                    <p>Username</p>
-                    <input type="text" id="username" placeholder="thorfinn" value="${user.username}">
-
-                    <p>Email</p>
-                    <input type="text" id="email" placeholder="einar@gmail.com" value="${user.email}">
-
-                    <p>Senha</p>
-                    <input type="password" id="senha" placeholder="thorfinn123" value="${user.password}">
-
-                    <p>Data de nascimento</p>
-                    <input type="date" id="data_nascimento" value="${user.birthday}">
-
-                    <button id="next-button">Próximo ></button>`;
-
-  const nextButton = document.getElementById("next-button");
-  nextButton.addEventListener("click", uploadPart);
+  const firstPart = document.querySelector(".first-part");
+  const secondPart = document.querySelector(".second-part");
+  firstPart.style.display = "flex";
+  secondPart.style.display = "none";
 }
 
 buttonRegister.addEventListener("click", cadastrarUsuario);
 nextButton.addEventListener("click", uploadPart);
+backButton.addEventListener("click", oldText);
