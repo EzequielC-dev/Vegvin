@@ -77,7 +77,10 @@
 
 .comentario-user img {
     border-radius: 50%;
-    width: 10%;
+    width: 4rem;
+    height: 4rem;
+
+    object-fit: cover;
 }
 
 .categoria {
@@ -89,7 +92,9 @@
 
 .forum-top-usuarios img {
     width: 4rem;
+    height: 4rem;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .comentario-likes-respostas {
