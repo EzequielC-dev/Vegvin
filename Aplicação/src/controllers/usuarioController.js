@@ -35,6 +35,7 @@ function cadastrar(req, res) {
   const email = req.body.email;
   const senha = req.body.senha;
   const dtNasc = req.body.data_nascimento;
+  const image = req.file.filename;
 
   if (nome == undefined) {
     res.status(400).send("Seu nome está indefinido!");
@@ -53,7 +54,7 @@ function cadastrar(req, res) {
           console.log("Esse e-mail já existe");
         } else if (resultado.length == 0) {
           usuarioModel
-            .cadastrar(nome, email, senha, dtNasc)
+            .cadastrar(nome, email, senha, dtNasc, image)
             .then(function (resultado) {
               res.json(resultado);
             })
