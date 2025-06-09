@@ -310,16 +310,41 @@ function sendEmail() {
 
 function userImage() {
   const userImage = document.getElementById("user-image");
-  const userId = sessionStorage.userID;
+  const id = sessionStorage.userID;
 
-  fetch(`http://localhost:3333/getUserImage/${userId}`)
+  const header = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch(`http://localhost:3333/getUserImage/${id}`, header)
     .then((result) => {
       result.json().then((photo) => {
         console.log(photo);
-        // userImage.setAttribute("src", `${photo}`);
+        userImage.setAttribute(
+          "src",
+          `./assets/users-images/${photo[0].imagem}`
+        );
       });
     })
-    .catch((error) => {});
+    .catch((error) => {
+      Toastify({
+        text: "Erro: não foi possível pegar a foto do usuário",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "#000",
+          color: "#EFB135",
+        },
+      }).showToast();
+    });
 }
 
 todayDate.innerHTML = `${dateComplete.day}/${dateComplete.month}/${dateComplete.year}`;

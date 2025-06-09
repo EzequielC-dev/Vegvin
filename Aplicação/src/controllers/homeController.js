@@ -39,7 +39,7 @@ function sendEmail(req, res) {
 }
 
 function getUserPhoto(req, res) {
-  const id = req.params.userId;
+  const id = req.params.id;
 
   homeModel
     .getUserPhoto(id)
