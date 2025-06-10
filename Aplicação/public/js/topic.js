@@ -16,7 +16,6 @@ function openTopicPage() {
 
       if (result.ok) {
         result.json().then((topic) => {
-          console.log(topic);
           topicClicked.innerHTML = `
           <section class="topic-comment-title">
             <div class="topic-user">
@@ -96,7 +95,20 @@ function viewComments() {
         result.json().then((comments) => {
           comments.forEach((comment) => {
             console.log(comment);
-            sectionComments.innerHTML += `
+            if (comment.comentarioImagem != "null") {
+              sectionComments.innerHTML += `
+              <div class="user-comment">
+                    <span>
+                        <img src="/assets/users-images/${comment.imagem}"
+                            alt="Icon User Image">
+                        <p>${comment.username} (${comment.email})</p>
+                    </span>
+                    <p>${comment.comentarioTexto}</p>
+                    <img src="./assets/users-images/${comment.comentarioImagem}">
+                </div>
+            `;
+            } else {
+              sectionComments.innerHTML += `
               <div class="user-comment">
                     <span>
                         <img src="/assets/users-images/${comment.imagem}"
@@ -106,6 +118,7 @@ function viewComments() {
                     <p>${comment.comentarioTexto}</p>
                 </div>
             `;
+            }
           });
         });
       }
@@ -150,51 +163,100 @@ function addComment() {
     }).showToast();
   } else {
     const commentInput = document.getElementById("input_comment").value;
-    const header = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userID: sessionStorage.userID,
-        topicID: id,
-        comment: commentInput,
-      }),
-    };
+    const commentPhoto = document.getElementById("input_file");
 
-    fetch("http://localhost:3333/topic/addComment", header)
-      .then(() => {
-        Toastify({
-          text: "Comentário adicionado com sucesso",
-          duration: 3000,
-          destination: "https://github.com/apvarun/toastify-js",
-          newWindow: true,
-          close: true,
-          gravity: "top",
-          position: "right",
-          stopOnFocus: true,
-          style: {
-            background: "#EFB135",
-            color: "#361E05",
-          },
-        }).showToast();
-      })
-      .catch(() => {
-        Toastify({
-          text: "Erro: não foi possível adicionar comentário!",
-          duration: 3000,
-          destination: "https://github.com/apvarun/toastify-js",
-          newWindow: true,
-          close: true,
-          gravity: "top",
-          position: "right",
-          stopOnFocus: true,
-          style: {
-            background: "#EFB135",
-            color: "#361E05",
-          },
-        }).showToast();
-      });
+    if (commentPhoto.files[0] != undefined) {
+      const formData = new FormData();
+      formData.append("userID", sessionStorage.userID);
+      formData.append("topicID", id);
+      formData.append("comment", commentInput);
+      formData.append("photo", commentPhoto.files[0]);
+
+      const header = {
+        method: "POST",
+        body: formData,
+      };
+
+      fetch("http://localhost:3333/topic/addComment", header)
+        .then(() => {
+          Toastify({
+            text: "Comentário adicionado com sucesso",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "#EFB135",
+              color: "#361E05",
+            },
+          }).showToast();
+        })
+        .catch(() => {
+          Toastify({
+            text: "Erro: não foi possível adicionar comentário!",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "#EFB135",
+              color: "#361E05",
+            },
+          }).showToast();
+        });
+    } else {
+      const header = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userID: sessionStorage.userID,
+          topicId: id,
+          comment: commentInput,
+        }),
+      };
+
+      fetch("http://localhost:3333/topic/addCommentWithoutImage", header)
+        .then(() => {
+          Toastify({
+            text: "Comentário adicionado com sucesso",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "#EFB135",
+              color: "#361E05",
+            },
+          }).showToast();
+        })
+        .catch(() => {
+          Toastify({
+            text: "Erro: não foi possível adicionar comentário!",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "#EFB135",
+              color: "#361E05",
+            },
+          }).showToast();
+        });
+    }
   }
 }
 

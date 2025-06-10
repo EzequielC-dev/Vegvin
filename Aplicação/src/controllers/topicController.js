@@ -38,6 +38,7 @@ function addComment(req, res) {
   const fkUser = req.body.userID;
   const fkTopic = req.body.topicID;
   const commentContent = req.body.comment;
+  const commentPhoto = req.file.filename;
 
   if (
     fkTopic == undefined ||
@@ -49,7 +50,32 @@ function addComment(req, res) {
       .send("Algumas das suas informações enviadas estão indefinidas!");
   } else {
     topicModel
-      .addComment(commentContent, fkTopic, fkUser)
+      .addComment(commentContent, commentPhoto, fkTopic, fkUser)
+      .then((result) => {
+        res.status(200).json(result);
+      })
+      .catch((error) => {
+        console.log("Erro: não foi possível postar o comentário!", error);
+      });
+  }
+}
+
+function addCommentWithoutImage(req, res) {
+  const fkUser = req.body.userID;
+  const fkTopic = req.body.topicId;
+  const commentContent = req.body.comment;
+
+  if (
+    fkTopic == undefined ||
+    fkTopic == undefined ||
+    commentContent == undefined
+  ) {
+    res
+      .status(500)
+      .send("Algumas das suas informações enviadas estão indefinidas!");
+  } else {
+    topicModel
+      .addComment(commentContent, null, fkTopic, fkUser)
       .then((result) => {
         res.status(200).json(result);
       })
@@ -72,6 +98,7 @@ function getCategories(req, res) {
 
 module.exports = {
   addComment,
+  addCommentWithoutImage,
   viewComments,
   countAnswers,
   getCategories,
