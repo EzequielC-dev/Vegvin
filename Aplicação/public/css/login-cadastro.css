@@ -97,6 +97,12 @@
     cursor: pointer;
 }
 
+.principal-login button:hover,
+.principal-cadastro button:hover {
+    background-color: #1f1e1e;
+    transition-duration: 0.8s;
+}
+
 #input-data {
     width: 10rem;
 }
