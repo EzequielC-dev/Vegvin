@@ -31,6 +31,10 @@ function viewPosts() {
 
           divPost.classList.add("comentario");
           divPost.setAttribute("id", `${post.idTopico}`);
+          divPost.setAttribute(
+            "onclick",
+            `window.location.href = "topic.html?${post.idTopico}"`
+          );
 
           divPost.innerHTML = `<p class="categoria">${post.categoria}</p>`;
           divPost.innerHTML += `<div class="comentario-user"><img src="./assets/users-images/${post.imagem}" alt="default-icon"><p>Usuário: ${post.username} (${post.email})</p></div>`;
