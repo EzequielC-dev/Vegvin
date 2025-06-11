@@ -172,9 +172,8 @@
     align-items: center;
 
     img {
-        width: 10.5rem;
-        height: 10rem;
-        border-radius: 50%;
+        width: 7rem;
+        height: 7rem;
         object-fit: cover;
     }
 }

@@ -14,8 +14,14 @@ function cadastrarUsuario() {
   const senha = user.password;
   const dtNasc = user.birthday;
   const photo = document.getElementById("photo");
+  console.log(photo);
 
-  if (username.includes(" ")) {
+  const userNameRealTime = document.getElementById("username").value;
+  const userEmailRealTime = document.getElementById("email").value;
+  const userPasswordRealTime = document.getElementById("senha").value;
+  const userBirthdayRealTime = document.getElementById("data_nascimento").value;
+
+  if (userNameRealTime.includes(" ")) {
     Toastify({
       text: "Erro: Espaços não são permitidos no Username!",
       duration: 3000,
@@ -31,13 +37,13 @@ function cadastrarUsuario() {
       },
     }).showToast();
   } else if (
-    username.includes("@") ||
-    username.includes("#") ||
-    username.includes("$") ||
-    username.includes("%") ||
-    username.includes("&") ||
-    username.includes("*") ||
-    username.includes("!")
+    userNameRealTime.includes("@") ||
+    userNameRealTime.includes("#") ||
+    userNameRealTime.includes("$") ||
+    userNameRealTime.includes("%") ||
+    userNameRealTime.includes("&") ||
+    userNameRealTime.includes("*") ||
+    userNameRealTime.includes("!")
   ) {
     Toastify({
       text: "Erro: Caracteres especiais não são permitidos no Username!",
@@ -53,7 +59,7 @@ function cadastrarUsuario() {
         color: "#361E05",
       },
     }).showToast();
-  } else if (!email.includes("@")) {
+  } else if (!userEmailRealTime.includes("@")) {
     Toastify({
       text: "Erro: Por favor, coloque '@' no seu email!",
       duration: 3000,
@@ -68,7 +74,7 @@ function cadastrarUsuario() {
         color: "#361E05",
       },
     }).showToast();
-  } else if (!email.endsWith(".com")) {
+  } else if (!userEmailRealTime.endsWith(".com")) {
     Toastify({
       text: "Erro: Por favor, termine seu e-mail com finais válidos! Só aceitamos finais com: .com",
       duration: 3000,
@@ -83,24 +89,25 @@ function cadastrarUsuario() {
         color: "#361E05",
       },
     }).showToast();
-  } else if (senha.length > 30 || senha.length < 4) {
-    alert(
-      Toastify({
-        text: "Erro: Por favor, digite uma senha mais segura ou com menos de 30 caracteres!",
-        duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "top",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-          background: "#EFB135",
-          color: "#361E05",
-        },
-      }).showToast()
-    );
-  } else if (dtNasc == "") {
+  } else if (
+    userPasswordRealTime.length > 30 ||
+    userPasswordRealTime.length < 4
+  ) {
+    Toastify({
+      text: "Erro: Por favor, digite uma senha mais segura ou com menos de 30 caracteres!",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#EFB135",
+        color: "#361E05",
+      },
+    }).showToast();
+  } else if (userBirthdayRealTime == "") {
     Toastify({
       text: "Erro: Por favor, coloque uma data de nascimento!",
       duration: 3000,
@@ -115,7 +122,7 @@ function cadastrarUsuario() {
         color: "#361E05",
       },
     }).showToast();
-  } else if (photo.files[0].length === 0) {
+  } else if (photo.files.length === 0) {
     Toastify({
       text: "Erro: Por favor, insira uma foto de perfil!",
       duration: 3000,
