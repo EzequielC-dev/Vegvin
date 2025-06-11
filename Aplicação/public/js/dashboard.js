@@ -116,8 +116,9 @@ function historyPosts() {
       divPosts = document.querySelector(".history-user-posts");
 
       data.forEach((post) => {
-        console.log(post);
-        divPosts.innerHTML += `<div class="history-post-data"><a href="topic.html"><span class="history-post-span"><img src="../assets/icons/icon-topic.svg"><h3>${
+        divPosts.innerHTML += `<div class="history-post-data"><a href="topic.html?${
+          post.idTopico
+        }"><span class="history-post-span"><img src="../assets/icons/icon-topic.svg"><h3>${
           post.titulo
         }</h3></span> <p>Titulo: ${
           post.categoria
