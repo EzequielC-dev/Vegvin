@@ -308,7 +308,46 @@ function sendEmail() {
   }
 }
 
+function userImage() {
+  const userImage = document.getElementById("user-image");
+  const id = sessionStorage.userID;
+
+  const header = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch(`http://localhost:3333/getUserImage/${id}`, header)
+    .then((result) => {
+      result.json().then((photo) => {
+        userImage.setAttribute(
+          "src",
+          `./assets/users-images/${photo[0].imagem}`
+        );
+      });
+    })
+    .catch((error) => {
+      Toastify({
+        text: "Erro: não foi possível pegar a foto do usuário",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "#000",
+          color: "#EFB135",
+        },
+      }).showToast();
+    });
+}
+
 todayDate.innerHTML = `${dateComplete.day}/${dateComplete.month}/${dateComplete.year}`;
 sendEmailButton.addEventListener("click", sendEmail);
 window.addEventListener("DOMContentLoaded", verifyUserName);
 window.addEventListener("DOMContentLoaded", incrementTitle);
+window.addEventListener("DOMContentLoaded", userImage);

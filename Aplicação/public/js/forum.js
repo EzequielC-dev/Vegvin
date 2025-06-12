@@ -31,9 +31,13 @@ function viewPosts() {
 
           divPost.classList.add("comentario");
           divPost.setAttribute("id", `${post.idTopico}`);
+          divPost.setAttribute(
+            "onclick",
+            `window.location.href = "topic.html?${post.idTopico}"`
+          );
 
           divPost.innerHTML = `<p class="categoria">${post.categoria}</p>`;
-          divPost.innerHTML += `<div class="comentario-user"><img src="./assets/forum/default-image.jpg" alt="default-icon"><p>Usuário: ${post.username} (${post.email})</p></div>`;
+          divPost.innerHTML += `<div class="comentario-user"><img src="./assets/users-images/${post.imagem}" alt="default-icon"><p>Usuário: ${post.username} (${post.email})</p></div>`;
           divPost.innerHTML += `<a href="topic.html?${post.idTopico}">${post.titulo}</a>`;
           userPosts.appendChild(divPost);
         });
@@ -168,10 +172,11 @@ function topUsersPosts() {
           let contador = 1;
 
           top.forEach((user) => {
+            console.log(user);
             const topUsers = document.querySelector(".forum-top-usuarios");
             topUsers.innerHTML += `
                        <span>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBXQzrpIsvckkZTMv-bHzXiimED-8cG0RXg&s"
+                            <img src="./assets/users-images/${user.imagem}"
                                 alt="Foto de Perfil Usuário">
                             <div>
                                 <p><b>${contador}. ${user.email} </b></p>

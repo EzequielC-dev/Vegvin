@@ -2,6 +2,8 @@ const ambiente_processo = "desenvolvimento";
 const caminho_env = ambiente_processo === "producao" ? ".env" : ".env.dev";
 require("dotenv").config({ path: caminho_env });
 
+const homeModel = require("../models/homeModel");
+
 const nodemailer = require("nodemailer");
 const transport = nodemailer.createTransport({
   host: process.env.MAILER_HOST,
@@ -36,6 +38,20 @@ function sendEmail(req, res) {
   }
 }
 
+function getUserPhoto(req, res) {
+  const id = req.params.id;
+
+  homeModel
+    .getUserPhoto(id)
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((error) => {
+      console.log("Erro: não foi possível pegar a foto do usuário", error);
+    });
+}
+
 module.exports = {
   sendEmail,
+  getUserPhoto,
 };

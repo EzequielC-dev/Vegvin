@@ -35,7 +35,7 @@
             <div>
                 <h1>cadastro</h1>
 
-                <div class="principal-cadastro-texto">
+                <div class="principal-cadastro-texto first-part">
                     <p>Username</p>
                     <input type="text" id="username" placeholder="thorfinn">
 
@@ -47,10 +47,20 @@
 
                     <p>Data de nascimento</p>
                     <input type="date" id="data_nascimento">
+
+                    <button id="next-button">Próximo ></button>
+                </div>
+
+                <div class="principal-cadastro-texto second-part">
+                    <p>Foto de Perfil</p>
+                    <label for="photo" id="label-photo"><img src="./assets/icons/icon-upload.svg"
+                            alt="Icon Upload"></label>
+                    <input type="file" id="photo">
+                    <button id="back-button">
+                        🡰 Anterior</button>
                 </div>
 
                 <button id="cadastrar">cadastrar</button>
-
             </div>
         </section>
 

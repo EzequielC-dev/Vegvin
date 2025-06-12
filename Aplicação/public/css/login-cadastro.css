@@ -42,6 +42,7 @@
 .principal-cadastro-texto {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: start;
     font-weight: bold;
 
@@ -51,6 +52,12 @@
 
     margin: 0 auto;
     width: 18rem;
+    height: 20rem;
+
+}
+
+.principal-login-texto {
+    height: 13rem;
 }
 
 .principal-login-texto p,
@@ -88,6 +95,12 @@
     font-weight: bold;
     text-transform: capitalize;
     cursor: pointer;
+}
+
+.principal-login button:hover,
+.principal-cadastro button:hover {
+    background-color: #1f1e1e;
+    transition-duration: 0.8s;
 }
 
 #input-data {
@@ -141,4 +154,32 @@
 
 .menu-ativo {
     width: 300px;
+}
+
+.second-part {
+    display: none;
+}
+
+#photo {
+    display: none;
+}
+
+#label-photo {
+    --amarelo-bg-comentario: #f2c05dab;
+    height: 120%;
+    background-color: var(--amarelo-bg-comentario);
+
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px dashed var(--amarelo-bg-ativo);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 7rem;
+        height: 7rem;
+        object-fit: cover;
+    }
 }

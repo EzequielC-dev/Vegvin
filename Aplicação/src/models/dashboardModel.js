@@ -14,7 +14,7 @@ function mostUsedCategory(fk_usuario) {
 
 function historyPosts(id_usuario) {
   const sqlInstruction = `
-    SELECT topico.titulo, topico.categoria, topico.dataPublicacao FROM topico 
+    SELECT topico.idTopico, topico.titulo, topico.categoria, topico.dataPublicacao FROM topico 
     JOIN usuario ON idUsuario = fk_usuario WHERE fk_usuario = ${id_usuario} ORDER BY idTopico DESC LIMIT 6;
     `;
 

@@ -22,7 +22,10 @@
 
 .principal-user-img img {
     width: 10rem;
+    height: 10rem;
     border-radius: 50%;
+
+    object-fit: cover;
 }
 
 .principal-user-information {

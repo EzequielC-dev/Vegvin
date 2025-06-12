@@ -10,6 +10,43 @@ user.innerHTML = sessionStorage.userName;
 email.innerHTML = sessionStorage.userEmail;
 birthday.innerHTML = userBirthday.substring(0, 10);
 
+function getUserImage() {
+  const id = sessionStorage.userID;
+  const userImage = document.getElementById("user-image");
+  const header = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch(`http://localhost:3333/getUserImage/${id}`, header)
+    .then((result) => {
+      result.json().then((photo) => {
+        userImage.setAttribute(
+          "src",
+          `./assets/users-images/${photo[0].imagem}`
+        );
+      });
+    })
+    .catch((error) => {
+      Toastify({
+        text: "Erro: não foi possível pegar a foto do usuário",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "#000",
+          color: "#EFB135",
+        },
+      }).showToast();
+    });
+}
+
 function totalPosts() {
   const totalPosts = document.getElementById("user-totalPosts");
 
@@ -79,7 +116,9 @@ function historyPosts() {
       divPosts = document.querySelector(".history-user-posts");
 
       data.forEach((post) => {
-        divPosts.innerHTML += `<div class="history-post-data"><a href="topic.html"><span class="history-post-span"><img src="../assets/icons/icon-topic.svg"><h3>${
+        divPosts.innerHTML += `<div class="history-post-data"><a href="topic.html?${
+          post.idTopico
+        }"><span class="history-post-span"><img src="../assets/icons/icon-topic.svg"><h3>${
           post.titulo
         }</h3></span> <p>Titulo: ${
           post.categoria
@@ -210,3 +249,4 @@ window.addEventListener("DOMContentLoaded", mostUsedCategory);
 window.addEventListener("DOMContentLoaded", historyPosts);
 window.addEventListener("DOMContentLoaded", viewCategoriesDashboard);
 window.addEventListener("DOMContentLoaded", viewWeeklyPosts);
+window.addEventListener("DOMContentLoaded", getUserImage);

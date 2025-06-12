@@ -20,10 +20,11 @@
             <button id="login" class="no-auth"><a href="login.html">Login</a></button>
 
             <button class="normal-button button-image auth">
-                <img src="./assets/icons/icon-forum.svg" alt="icon fórum">
+                <img src="./assets/icons/icon-forum-white.svg" alt="icon fórum">
                 <a href="forum.html">Fórum</a>
             </button>
-            <button class="normal-button button-image auth"><img src="./assets/icons/icon-sair.svg" alt="icon sair">
+            <button class="normal-button button-image auth"><img src="./assets/icons/icon-logout-white.svg"
+                    alt="icon sair">
                 <a href="index.html" id="leave">Sair</a></button>
         </nav>
     </header>
@@ -73,12 +74,17 @@
 
             <div class="topic-add-comment">
                 <h3>Participar da Conversa</h3>
-                <input type="text" id="input_comment" placeholder="Comente aqui!">
-                <span>
-                    <input type="file" id="input_file">
+                <div class="topic-comment-section">
+                    <input type="text" id="input_comment" placeholder="Comente aqui!">
+                    <span>
+                        <label for="input_file" id="label_input_file">
+                            <img src="./assets/icons/icon-upload.svg" alt="icon upload">
+                        </label>
+                        <input type="file" id="input_file" name="photo">
 
-                    <button id="button-add-comment">Enviar</button>
-                </span>
+                        <button id="button-add-comment">Enviar</button>
+                    </span>
+                </div>
             </div>
 
             <section id="topic-comments">

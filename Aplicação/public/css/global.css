@@ -16,7 +16,7 @@ body.dark {
     --amarelo-bg-comentario: rgb(105, 104, 94);
 
     
-    --preto: #000;
+    --preto: #EFEFEF;
     --cinza-escuro: #1A1A1A;
     --cinza: #2A2A2A;
     --cinza-claro: #3A3A3A;
@@ -100,7 +100,7 @@ body.dark {
 
     a {
         color: var(--amarelo);
-        padding: 1rem 3rem 1rem 2rem;
+        padding: 1rem 2rem 1rem 2rem;
     }
 }
 

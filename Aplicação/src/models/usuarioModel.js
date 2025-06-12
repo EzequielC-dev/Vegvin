@@ -13,9 +13,10 @@ function autenticar(email) {
   return database.executar(instrucaoSql);
 }
 
-function cadastrar(username, email, senha, dtNasc) {
+function cadastrar(username, email, senha, dtNasc, imagemPerfil) {
   const instrucaoSql = `
-        INSERT INTO usuario (username, email, senha, dtNasc) VALUES ('${username}', '${email}', '${senha}', '${dtNasc}');
+        INSERT INTO usuario (username, email, senha, dtNasc, imagemPerfil) 
+        VALUES ('${username}', '${email}', '${senha}', '${dtNasc}', '${imagemPerfil}');
     `;
   return database.executar(instrucaoSql);
 }
