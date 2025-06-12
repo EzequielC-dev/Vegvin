@@ -2,48 +2,36 @@ CREATE DATABASE vegvin;
 USE vegvin;
 
 CREATE TABLE usuario (
-	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(20),
     email VARCHAR(45),
     senha VARCHAR(25),
     dtNasc DATE,
-    tipo VARCHAR(25),
-    CONSTRAINT chk_tipo CHECK (tipo IN ('administrador', 'membro'))
+    imagemPerfil VARCHAR(45)
 );
-select * from usuario;
-SELECT * FROM topico WHERE idTopico = 10;
-
-    SELECT * FROM topico;
-    SELECT * FROM usuario;
-ALTER TABLE usuario MODIFY COLUMN email VARCHAR(45) UNIQUE;
-
-SELECT * FROM usuario;
 
 CREATE TABLE topico (
-	idTopico INT PRIMARY KEY,
-	categoria VARCHAR(30),
-    CONSTRAINT chk_categoria CHECK (categoria IN('geral', 'arcos e personagens', 'filosofia', 'teorias', 'artes')),
+    idTopico INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(50),
+    categoria VARCHAR(30),
+    CONSTRAINT chk_categoria CHECK (categoria IN('geral', 'arcos-e-personagens', 'filosofia', 'teorias', 'artes')),
     fk_usuario INT,
     CONSTRAINT fkUsuarioTopico FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
-
-CREATE TABLE metricas (
-	idMetricas INT,
-    categoriasMaisUtlizadas VARCHAR (45),
-    usuariosCadastrados VARCHAR(45),
-    fk_topico INT,
-    CONSTRAINT fkMetricasTopico FOREIGN KEY (fk_topico) REFERENCES topico(idTopico),
-    PRIMARY KEY (idMetricas, fk_topico)
-);
+ALTER TABLE topico ADD COLUMN dataPublicacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
 CREATE TABLE comentario (
-	idComentario INT,
-    comentario VARCHAR (255),
+    idComentario INT PRIMARY KEY AUTO_INCREMENT,
+    comentarioTexto VARCHAR (255),
+    comentarioImagem VARCHAR(45),
     fk_topicos INT,
-    CONSTRAINT fkComentarioTopico FOREIGN KEY (fk_topicos) REFERENCES metricas(idMetricas),
-    fk_paiComentario INT,
-    CONSTRAINT fk_paiComentario FOREIGN KEY (fk_paiComentario) REFERENCES comentario(idComentario),
-    PRIMARY KEY (idComentario, fk_topicos)
+    fk_usuario INT,
+    CONSTRAINT fkComentarioTopico FOREIGN KEY (fk_topicos) REFERENCES topico(idTopico),
+    CONSTRAINT fkUsuario FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
 
-SELECT * FROM usuario;
+CREATE TABLE dados_pessoais (
+  fkUsuario INT PRIMARY KEY,
+  telefone CHAR(9),
+  cep CHAR(8)
+);
