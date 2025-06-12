@@ -35,3 +35,4 @@ CREATE TABLE dados_pessoais (
   telefone CHAR(9),
   cep CHAR(8)
 );
+	
