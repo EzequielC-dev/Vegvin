@@ -23,8 +23,7 @@ function updateData() {
   const updatePassword = document.querySelector("#update-password").value;
   const updateDtNasc = document.querySelector("#update-dtNasc").value;
   const updatePhone = document.querySelector("#update-phone").value;
-  const updateCPF = document.querySelector("#update-cpf").value;
-  const updateAdress = document.querySelector("#update-adress").value;
+  const updateCep = document.querySelector("#update-cep").value;
 
   const sessionEmail = sessionStorage.userEmail;
 
@@ -189,14 +188,10 @@ function updateData() {
       });
   }
 
-  if (
-    updatePhone.length > 1 &&
-    updateCPF.length > 1 &&
-    updateAdress.length > 1
-  ) {
-    if (updateCPF.length != 11) {
+  if (updatePhone.length > 1 && updateCep.length > 1) {
+    if (updateCep.length != 8) {
       Toastify({
-        text: "Erro: Por favor, insira o CPF com 11 digítos!",
+        text: "Erro: Por favor, insira o CEP com 8 digítos!",
         duration: 3000,
         destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
@@ -217,8 +212,7 @@ function updateData() {
         },
         body: JSON.stringify({
           id: sessionStorage.userID,
-          adress: updateAdress,
-          CPF: updateCPF,
+          cep: updateCep,
           phone: updatePhone,
         }),
       };

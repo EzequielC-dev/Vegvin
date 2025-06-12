@@ -26,9 +26,9 @@ function updateDate(newDate, email) {
   return database.executar(sqlInstruction);
 }
 
-function updatePersonalData(user_id, phone, cpf, adress) {
+function updatePersonalData(user_id, phone, cep) {
   const sqlInstruction = `
-    INSERT INTO dados_pessoais VALUES (${user_id}, '${phone}','${cpf}', '${adress}');
+    INSERT INTO dados_pessoais VALUES (${user_id}, '${phone}','${cep}');
   `;
 
   return database.executar(sqlInstruction);

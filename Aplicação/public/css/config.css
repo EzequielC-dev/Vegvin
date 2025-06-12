@@ -46,7 +46,7 @@
     padding-bottom: 2rem;
 }
 
-.principal-user-data {
+.principal-user-data, .principal-user-personal {
     display: flex;
     gap: 2rem;
     text-wrap: wrap;
@@ -64,6 +64,7 @@
     padding-bottom: 2rem;
     width: 25vw;
 }
+
 
 .acessibity-dark-mode {
   display: flex;

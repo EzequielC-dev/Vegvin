@@ -90,20 +90,14 @@ function updateDate(req, res) {
 
 function updatePersonalData(req, res) {
   const id = req.body.id;
-  const adress = req.body.adress;
-  const CPF = req.body.CPF;
+  const cep = req.body.cep;
   const phone = req.body.phone;
 
-  if (
-    id == undefined ||
-    adress == undefined ||
-    CPF == undefined ||
-    phone == undefined
-  ) {
+  if (id == undefined || cep == undefined || phone == undefined) {
     res.status(500).send(`Informações indefinidas!`);
   } else {
     settingModel
-      .updatePersonalData(id, phone, CPF, adress)
+      .updatePersonalData(id, phone, cep)
       .then((result) => {
         res.status(200).json(result);
       })
