@@ -37,11 +37,17 @@
  }
 
  .principal-config-values {
-     display: flex;
-     justify-content: space-evenly;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 
+    div {
+     width: 20rem;
+     text-wrap: nowrap;
      background-color: var(--amarelo-bg-comentario);
      padding: 1rem;
+     border-radius: 4px;
+    }
  }
 
  .principal-container {

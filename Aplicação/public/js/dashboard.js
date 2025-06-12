@@ -47,7 +47,7 @@ function getUserImage() {
     });
 }
 
-function totalPosts() {
+function totalComments() {
   const totalPosts = document.getElementById("user-totalPosts");
 
   const header = {
@@ -60,10 +60,10 @@ function totalPosts() {
     }),
   };
 
-  fetch("http://localhost:3333/dashboard/totalPosts", header)
+  fetch("http://localhost:3333/dashboard/totalComments", header)
     .then((result) => {
       result.json().then((json) => {
-        totalPosts.innerHTML = `<h1>${json[0].total}</h1>`;
+        totalPosts.innerHTML = `<h1>${json[0].quantidade}</h1>`;
       });
     })
     .catch((error) => {
@@ -174,6 +174,10 @@ function viewCategoriesDashboard() {
           scales: {
             y: {
               beginAtZero: true,
+
+              ticks: {
+                stepSize: 1,
+              },
             },
           },
         },
@@ -232,6 +236,9 @@ function viewWeeklyPosts() {
               scales: {
                 y: {
                   beginAtZero: true,
+                  ticks: {
+                    stepSize: 1,
+                  },
                 },
               },
             },
@@ -244,7 +251,7 @@ function viewWeeklyPosts() {
     });
 }
 
-window.addEventListener("DOMContentLoaded", totalPosts);
+window.addEventListener("DOMContentLoaded", totalComments);
 window.addEventListener("DOMContentLoaded", mostUsedCategory);
 window.addEventListener("DOMContentLoaded", historyPosts);
 window.addEventListener("DOMContentLoaded", viewCategoriesDashboard);

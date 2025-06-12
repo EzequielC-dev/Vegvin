@@ -1,7 +1,7 @@
 const database = require("../database/config");
 
-function totalPosts(fk_usuario) {
-  const sqlInstruction = `SELECT COUNT(*) AS 'total' FROM topico WHERE fk_usuario = ${fk_usuario};`;
+function totalComments(fk_usuario) {
+  const sqlInstruction = `SELECT COUNT(*) AS 'quantidade' FROM comentario Where fk_usuario = ${fk_usuario};`;
 
   return database.executar(sqlInstruction);
 }
@@ -54,7 +54,7 @@ function viewWeeklyPosts(id_usuario) {
 }
 
 module.exports = {
-  totalPosts,
+  totalComments,
   mostUsedCategory,
   historyPosts,
   viewCategoriesDashboard,

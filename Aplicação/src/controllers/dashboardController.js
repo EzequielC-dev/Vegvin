@@ -1,13 +1,13 @@
 const dashboardModel = require("../models/dashboardModel");
 
-function totalPosts(req, res) {
+function totalComments(req, res) {
   const userId = req.body.userID;
 
   if (userId == undefined) {
     res.status(500).send("Seu ID do usuário está como indefinido!");
   } else {
     dashboardModel
-      .totalPosts(userId)
+      .totalComments(userId)
       .then((result) => {
         res.status(200).json(result);
       })
@@ -92,7 +92,7 @@ function viewWeeklyPosts(req, res) {
 }
 
 module.exports = {
-  totalPosts,
+  totalComments,
   mostUsedCategory,
   historyPosts,
   viewCategoriesDashboard,
