@@ -29,3 +29,9 @@ CREATE TABLE comentario (
     CONSTRAINT fkComentarioTopico FOREIGN KEY (fk_topicos) REFERENCES topico(idTopico),
     CONSTRAINT fkUsuario FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
+
+CREATE TABLE dados_pessoais (
+  fkUsuario INT PRIMARY KEY,
+  telefone CHAR(9),
+  cep CHAR(8)
+);
