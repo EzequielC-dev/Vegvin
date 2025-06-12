@@ -174,6 +174,7 @@
     border: 2px dashed var(--amarelo-bg-ativo);
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 

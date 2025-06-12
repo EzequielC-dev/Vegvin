@@ -1,6 +1,7 @@
 const buttonRegister = document.getElementById("cadastrar");
 const nextButton = document.getElementById("next-button");
 const backButton = document.getElementById("back-button");
+const photoInput = document.getElementById("photo");
 const user = {
   username: "",
   email: "",
@@ -14,7 +15,6 @@ function cadastrarUsuario() {
   const senha = user.password;
   const dtNasc = user.birthday;
   const photo = document.getElementById("photo");
-  console.log(photo);
 
   const userNameRealTime = document.getElementById("username").value;
   const userEmailRealTime = document.getElementById("email").value;
@@ -229,6 +229,17 @@ function oldText() {
   secondPart.style.display = "none";
 }
 
+function imageInformation() {
+  const spanPhoto = document.getElementById("span-photo");
+
+  if (photoInput.files.length > 0) {
+    spanPhoto.innerHTML = photoInput.files[0].name;
+  } else {
+    spanPhoto.innerHTML = "Nenhuma imagem selecionada";
+  }
+}
+
+photoInput.addEventListener("change", imageInformation);
 buttonRegister.addEventListener("click", cadastrarUsuario);
 nextButton.addEventListener("click", uploadPart);
 backButton.addEventListener("click", oldText);
