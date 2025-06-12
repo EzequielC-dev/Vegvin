@@ -22,6 +22,9 @@ function updateData() {
   const updateEmail = document.querySelector("#update-email").value;
   const updatePassword = document.querySelector("#update-password").value;
   const updateDtNasc = document.querySelector("#update-dtNasc").value;
+  const updatePhone = document.querySelector("#update-phone").value;
+  const updateCPF = document.querySelector("#update-cpf").value;
+  const updateAdress = document.querySelector("#update-adress").value;
 
   const sessionEmail = sessionStorage.userEmail;
 
@@ -184,6 +187,96 @@ function updateData() {
       .catch((error) => {
         console.log("Erro na requisição", error);
       });
+  }
+
+  if (
+    updatePhone.length > 1 &&
+    updateCPF.length > 1 &&
+    updateAdress.length > 1
+  ) {
+    if (updateCPF.length != 11) {
+      Toastify({
+        text: "Erro: Por favor, insira o CPF com 11 digítos!",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "#000",
+          color: "#EFB135",
+        },
+      }).showToast();
+    } else {
+      const header = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: sessionStorage.userID,
+          adress: updateAdress,
+          CPF: updateCPF,
+          phone: updatePhone,
+        }),
+      };
+
+      fetch("http://localhost:3333/setting/updatePersonalData", header)
+        .then((result) => {
+          result
+            .json()
+            .then(() => {
+              Toastify({
+                text: "Dados pessoais inseridos com sucesso!",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                style: {
+                  background: "#000",
+                  color: "#EFB135",
+                },
+              }).showToast();
+            })
+            .catch(() => {
+              Toastify({
+                text: "Erro: não foi possível inserir os dados pessoais",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                style: {
+                  background: "#000",
+                  color: "#EFB135",
+                },
+              }).showToast();
+            });
+        })
+        .catch(() => {
+          Toastify({
+            text: "Erro: não foi possível fazer a requisição",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "#000",
+              color: "#EFB135",
+            },
+          }).showToast();
+        });
+    }
   }
 }
 

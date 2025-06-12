@@ -193,6 +193,10 @@ function addComment() {
               color: "#361E05",
             },
           }).showToast();
+
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
         })
         .catch(() => {
           Toastify({

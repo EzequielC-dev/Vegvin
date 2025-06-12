@@ -19,4 +19,8 @@ router.put("/updateDate", function (req, res) {
   settingController.updateDate(req, res);
 });
 
+router.post("/updatePersonalData", function (req, res) {
+  settingController.updatePersonalData(req, res);
+});
+
 module.exports = router;
