@@ -6,7 +6,8 @@ CREATE TABLE usuario (
     username VARCHAR(20),
     email VARCHAR(45),
     senha VARCHAR(25),
-    dtNasc DATE
+    dtNasc DATE,
+    imagemPerfil VARCHAR(45)
 );
 
 CREATE TABLE topico (
@@ -17,28 +18,14 @@ CREATE TABLE topico (
     fk_usuario INT,
     CONSTRAINT fkUsuarioTopico FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
-
-SELECT * FROM topico JOIN usuario ON fk_usuario = idUsuario;
-
-CREATE TABLE metricas (
-	idMetricas INT,
-    categoriasMaisUtlizadas VARCHAR (45),
-    usuariosCadastrados VARCHAR(45),
-    fk_topico INT,
-    CONSTRAINT fkMetricasTopico FOREIGN KEY (fk_topico) REFERENCES topico(idTopico),
-    PRIMARY KEY (idMetricas, fk_topico)
-);
+ALTER TABLE topico ADD COLUMN dataPublicacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
 CREATE TABLE comentario (
-	idComentario INT AUTO_INCREMENT,
-    comentario VARCHAR (255),
+	idComentario INT PRIMARY KEY AUTO_INCREMENT,
+    comentarioTexto VARCHAR (255),
+	comentarioImagem VARCHAR(45),
     fk_topicos INT,
-    CONSTRAINT fkComentarioTopico FOREIGN KEY (fk_topicos) REFERENCES metricas(idMetricas),
-    fk_paiComentario INT,
-    CONSTRAINT fk_paiComentario FOREIGN KEY (fk_paiComentario) REFERENCES comentario(idComentario),
-    PRIMARY KEY (idComentario, fk_topicos)
+	fk_usuario INT,
+    CONSTRAINT fkComentarioTopico FOREIGN KEY (fk_topicos) REFERENCES topico(idTopico),
+    CONSTRAINT fkUsuario FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
-
-SELECT * FROM topico;
-SELECT * FROM usuario;
-SELECT * FROM topico ORDER BY idTopico DESC LIMIT 5;
